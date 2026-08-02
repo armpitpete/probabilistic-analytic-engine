@@ -1,10 +1,12 @@
 """Probabilistic Analytic Engine.
 
-Version 0.1 implements evidence acquisition and information sufficiency only.
+Version 0.2 adds strict provenance, hypothesis structure and immutable case
+snapshots while preserving the accepted v0.1 evidence-acquisition path.
 It does not calculate attribution probabilities.
 """
 
-from .acquisition import AcquisitionError, assess_case, validate_case
+from .acquisition import AcquisitionError
+from .engine import assess_case, validate_case
 
 __all__ = ["AcquisitionError", "assess_case", "validate_case"]
-__version__ = "0.1.0"
+__version__ = "0.2.0"
