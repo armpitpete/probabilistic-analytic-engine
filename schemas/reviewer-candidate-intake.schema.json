@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://merrinworld.uk/schemas/pae/reviewer-candidate-intake-v0.1.json",
+  "title": "PAE reviewer candidate intake v0.1",
+  "type": "object",
+  "required": [
+    "candidate_id",
+    "name_or_stable_identifier",
+    "institution",
+    "contact_route",
+    "proposed_roles",
+    "expertise",
+    "prepared_any_pae_case",
+    "approved_any_pae_case",
+    "seen_outcome_material",
+    "authored_case_source",
+    "advised_party_to_case",
+    "financial_conflict",
+    "employment_conflict",
+    "close_personal_conflict",
+    "willing_to_sign_confidential_record",
+    "other_conflicts_or_commitments",
+    "clarification_required",
+    "case_exclusions"
+  ],
+  "properties": {
+    "candidate_id": {"type": "string", "minLength": 1},
+    "name_or_stable_identifier": {"type": "string", "minLength": 1},
+    "institution": {"type": "string", "minLength": 1},
+    "contact_route": {"type": "string", "minLength": 1},
+    "proposed_roles": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"enum": ["methods", "domain", "evidence", "integrity"]}
+    },
+    "expertise": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "prepared_any_pae_case": {"type": "boolean"},
+    "approved_any_pae_case": {"type": "boolean"},
+    "seen_outcome_material": {"type": "boolean"},
+    "authored_case_source": {"type": "boolean"},
+    "advised_party_to_case": {"type": "boolean"},
+    "financial_conflict": {"type": "boolean"},
+    "employment_conflict": {"type": "boolean"},
+    "close_personal_conflict": {"type": "boolean"},
+    "willing_to_sign_confidential_record": {"type": "boolean"},
+    "other_conflicts_or_commitments": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "clarification_required": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "case_exclusions": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "decision": {
+      "enum": ["eligible", "needs_clarification", "unsuitable", "withdrawn"]
+    }
+  },
+  "additionalProperties": true
+}
