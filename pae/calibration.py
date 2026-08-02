@@ -92,7 +92,7 @@ def validate_manifest(m:Any)->dict[str,Any]:
  if er.get("self_certification_prohibited") is not True: raise AcquisitionError("manifest: external review self-certification must be prohibited")
  if er.get("minimum_reviewers")!=2: raise AcquisitionError("manifest: minimum_reviewers must equal 2")
  _sl(er,"required_declarations","manifest external_review"); _sl(er,"critical_finding_types","manifest external_review")
- return {"case_ids":ids,"class_counts":dict(counts),"thresholds":t}
+ return {"case_ids":sorted(ids),"class_counts":dict(counts),"thresholds":t}
 
 def build_blinded_review_packet(m:Any)->dict[str,Any]:
  validate_manifest(m)
@@ -148,6 +148,7 @@ def _ece(rows):
 
 def aggregate_calibration(m:Any,b:Any)->dict[str,Any]:
  info=validate_manifest(m)
+ case_ids=set(info["case_ids"])
  if not isinstance(b,dict) or b.get("calibration_version")!=VERSION: raise AcquisitionError("aggregate: unsupported calibration_version")
  results=b.get("case_results")
  if not isinstance(results,list) or len(results)!=8: raise AcquisitionError("aggregate: case_results must contain exactly eight records")
@@ -169,8 +170,8 @@ def aggregate_calibration(m:Any,b:Any)->dict[str,Any]:
   br=sum((v-(1 if x==expected else 0))**2 for x,v in p.items()); lg=-math.log(p[expected])
   per.append({"case_id":cid,"outcome_class":expected,"leading_class":lead,"correct":hit,"resolved_probability":p[expected],"brier_score":br,"logarithmic_score":lg})
   bins.append({"confidence":max(p.values()),"correct":int(hit)}); validated.append((cid,p))
- if seen!=info["case_ids"]: raise AcquisitionError("aggregate: case_results do not match frozen corpus")
- reviews=_reviews(b.get("external_reviews"),info["case_ids"],m["external_review"]["minimum_reviewers"])
+ if seen!=case_ids: raise AcquisitionError("aggregate: case_results do not match frozen corpus")
+ reviews=_reviews(b.get("external_reviews"),case_ids,m["external_review"]["minimum_reviewers"])
  critical=[]; major=[]; rejected=[]
  for cid,rs in reviews.items():
   for r in rs:
