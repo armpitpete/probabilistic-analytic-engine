@@ -1,0 +1,107 @@
+{
+  "calculation_version": "0.1",
+  "calculation_id": "belarus-eu-2021-cutoff-2021-11-10",
+  "case_snapshot_sha256": "be2a5d9f5f9eaf82b93c61965e078f40119335ab02023b5d631e59fc0616f045",
+  "exclusive_group_id": "primary-mechanism-at-cutoff",
+  "prepared_by": "pae-pilot-analyst-role",
+  "approved_for_calculation_by": "pae-pilot-method-review-role",
+  "posterior": {
+    "h-organic-primary": {
+      "point_estimate": 0.053302179256161056,
+      "minimum_sensitivity_bound": 0.002243845603618893,
+      "maximum_sensitivity_bound": 0.5070274681548484,
+      "evidence_confidence": {
+        "level": "moderate",
+        "reason": "Humanitarian and participant-level motives are directly plausible, but the public record at cutoff contains specific state-facilitation allegations.",
+        "change_conditions": [
+          "Authenticated state orders or transport records become public.",
+          "Independent evidence disproves the reported state-linked mechanisms."
+        ]
+      }
+    },
+    "h-state-facilitation-primary": {
+      "point_estimate": 0.8664670156117753,
+      "minimum_sensitivity_bound": 0.26386554267125684,
+      "maximum_sensitivity_bound": 0.9937271697452573,
+      "evidence_confidence": {
+        "level": "moderate",
+        "reason": "Several official sources describe specific mechanisms, but underlying records and command evidence are incomplete.",
+        "change_conditions": [
+          "Named facilitating entities or authenticated operational instructions are published.",
+          "Independent records show the travel and escort claims were materially incorrect."
+        ]
+      }
+    },
+    "h-insufficient-public-evidence": {
+      "point_estimate": 0.0802308051320636,
+      "minimum_sensitivity_bound": 0.003707065204265691,
+      "maximum_sensitivity_bound": 0.6124613657430243,
+      "evidence_confidence": {
+        "level": "high",
+        "reason": "The limits of the public evidence and source dependence are directly inspectable.",
+        "change_conditions": [
+          "Later outcome records identify concrete actors and mechanisms.",
+          "Independent operational evidence becomes available."
+        ]
+      }
+    }
+  },
+  "sensitivity": {
+    "all_minimum_inputs": {
+      "h-organic-primary": 0.04865593784635055,
+      "h-state-facilitation-primary": 0.8726180789395503,
+      "h-insufficient-public-evidence": 0.07872598321409904
+    },
+    "all_maximum_inputs": {
+      "h-organic-primary": 0.0432682444402239,
+      "h-state-facilitation-primary": 0.8923481323788014,
+      "h-insufficient-public-evidence": 0.06438362318097471
+    },
+    "leave_one_independence_group_out": [
+      {
+        "omitted_independence_group": "border-operational-observation",
+        "posterior": {
+          "h-organic-primary": 0.1913024921764335,
+          "h-state-facilitation-primary": 0.6345505889164804,
+          "h-insufficient-public-evidence": 0.17414691890708617
+        }
+      },
+      {
+        "omitted_independence_group": "council-specific-mechanism",
+        "posterior": {
+          "h-organic-primary": 0.13149500845168435,
+          "h-state-facilitation-primary": 0.728385509240416,
+          "h-insufficient-public-evidence": 0.1401194823078997
+        }
+      },
+      {
+        "omitted_independence_group": "eu-political-attribution",
+        "posterior": {
+          "h-organic-primary": 0.06521271003285359,
+          "h-state-facilitation-primary": 0.8454640982919128,
+          "h-insufficient-public-evidence": 0.0893231916752336
+        }
+      },
+      {
+        "omitted_independence_group": "un-humanitarian-observation",
+        "posterior": {
+          "h-organic-primary": 0.05439872290041194,
+          "h-state-facilitation-primary": 0.8583361213986552,
+          "h-insufficient-public-evidence": 0.08726515570093286
+        }
+      }
+    ]
+  },
+  "independence_group_weights": {
+    "border-operational-observation": 0.8,
+    "council-specific-mechanism": 0.7,
+    "eu-political-attribution": 0.5,
+    "un-humanitarian-observation": 0.7
+  },
+  "review_status": "pending",
+  "requires_post_calculation_review": true,
+  "automatic_attribution_performed": false,
+  "public_conclusion_authorised": false,
+  "warning": "These results are deterministic transformations of human-declared priors and likelihood ranges. Sensitivity bounds are not measured confidence intervals and the draft is not accepted until reviewed.",
+  "draft_sha256": "bcb978849902f510ac7232839319572df61cd32ce93681bd1412d104e06c7d1f"
+}

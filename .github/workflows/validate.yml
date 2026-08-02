@@ -26,9 +26,11 @@ jobs:
       - run: python -m pae.domains domains/state-migration-coercion/module.json domains/state-migration-coercion/historical-cases.json --output generated/state-migration-coercion-domain.json
       - run: python -m pae.probability_contract fixtures/probability-contract-v0.1.json --output generated/probability-contract-v0.1.json
       - run: python -m pae.calculation calculate fixtures/calculation-method-fixture-v0.1.json --output generated/calculation-method-draft-v0.1.json
+      - run: python -m pae.historical_pilot pilots/belarus-eu-2021/evidence-cut.json pilots/belarus-eu-2021/calculation-plan.json pilots/belarus-eu-2021/review.json pilots/belarus-eu-2021/outcome.json --output generated/belarus-eu-2021-pilot.json
       - run: test -s generated/ceuta-v0.1-assessment.json
       - run: test -s generated/ceuta-v0.2-assessment.json
       - run: test -s generated/ceuta-v0.3-assessment.json
       - run: test -s generated/state-migration-coercion-domain.json
       - run: test -s generated/probability-contract-v0.1.json
       - run: test -s generated/calculation-method-draft-v0.1.json
+      - run: test -s generated/belarus-eu-2021-pilot.json

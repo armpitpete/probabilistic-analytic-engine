@@ -1,0 +1,30 @@
+{
+  "pilot_id": "belarus-eu-2021",
+  "outcome_version": "0.1",
+  "resolution_standard": "For this pilot only, resolve the primary mechanism as state facilitation when post-cutoff official records identify concrete state-linked travel, transport or commercial facilitation and formally attribute the activity to political instrumentalisation. This is institutional resolution, not judicial proof.",
+  "resolved_hypothesis_id": "h-state-facilitation-primary",
+  "resolution_quality": "institutionally_attributed_not_judicially_adjudicated",
+  "outcome_sources": [
+    {
+      "id": "outcome-council-2021-11-15",
+      "date": "2021-11-15",
+      "institution": "Council of the European Union",
+      "title": "EU broadens sanctions scope to tackle hybrid attacks and instrumentalisation of migrants",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2021/11/15/belarus-eu-broadens-scope-for-sanctions-to-tackle-hybrid-attacks-and-instrumentalisation-of-migrants/",
+      "supports": "The Council created designation criteria for people and entities organising or contributing to activities facilitating illegal border crossings."
+    },
+    {
+      "id": "outcome-council-2021-12-02",
+      "date": "2021-12-02",
+      "institution": "Council of the European Union",
+      "title": "EU adopts fifth sanctions package over instrumentalisation of migrants",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2021/12/02/belarus-eu-adopts-5th-package-of-sanctions-over-continued-human-rights-abuses-and-the-instrumentalisation-of-migrants/",
+      "supports": "The Council named Belavia, tour operators and hotels as helping incite and organise illegal border crossings and participating in political instrumentalisation."
+    }
+  ],
+  "limitations": [
+    "The outcome is an official institutional attribution and sanctions decision, not a criminal conviction or judicial finding.",
+    "The later outcome does not prove every pre-cutoff public allegation or disclose the full command chain.",
+    "The pilot scores whether the engine anticipated the predeclared institutional resolution standard, not metaphysical truth."
+  ]
+}

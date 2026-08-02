@@ -1,0 +1,11 @@
+{
+  "draft_sha256": "bcb978849902f510ac7232839319572df61cd32ce93681bd1412d104e06c7d1f",
+  "reviewer_id": "pae-pilot-result-review-role",
+  "decision": "accept_for_historical_pilot",
+  "rationale": "The leading hypothesis is stable across every leave-one-stream-out test, the sensitivity bounds remain visibly wide, and the draft preserves institutional-evidence limitations. This is a role-separated internal method review, not independent external human validation.",
+  "reviewed_at": "2026-08-02T13:10:00+01:00",
+  "accepted_for_historical_pilot": true,
+  "public_conclusion_authorised": false,
+  "warning": "Acceptance authorises only the controlled historical pilot. It does not authorise a live unresolved case or public conclusion.",
+  "review_record_sha256": "295e9a811183454cbc9c50056d919235cb1dd4768c06efe17dca5b688217236e"
+}
