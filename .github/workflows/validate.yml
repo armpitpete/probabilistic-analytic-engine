@@ -27,6 +27,8 @@ jobs:
       - run: python -m pae.probability_contract fixtures/probability-contract-v0.1.json --output generated/probability-contract-v0.1.json
       - run: python -m pae.calculation calculate fixtures/calculation-method-fixture-v0.1.json --output generated/calculation-method-draft-v0.1.json
       - run: python -m pae.historical_pilot pilots/belarus-eu-2021/evidence-cut.json pilots/belarus-eu-2021/calculation-plan.json pilots/belarus-eu-2021/review.json pilots/belarus-eu-2021/outcome.json --output generated/belarus-eu-2021-pilot.json
+      - run: python -m pae.calibration validate-manifest calibration/corpus-v0.1.json --output generated/calibration-manifest.json
+      - run: python -m pae.calibration prepare-review calibration/corpus-v0.1.json --output generated/external-review-packet.json
       - run: test -s generated/ceuta-v0.1-assessment.json
       - run: test -s generated/ceuta-v0.2-assessment.json
       - run: test -s generated/ceuta-v0.3-assessment.json
@@ -34,3 +36,5 @@ jobs:
       - run: test -s generated/probability-contract-v0.1.json
       - run: test -s generated/calculation-method-draft-v0.1.json
       - run: test -s generated/belarus-eu-2021-pilot.json
+      - run: test -s generated/calibration-manifest.json
+      - run: test -s generated/external-review-packet.json

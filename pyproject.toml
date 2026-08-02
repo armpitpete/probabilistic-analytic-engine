@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "probabilistic-analytic-engine"
-version = "0.7.0"
-description = "Auditable evidence, human-reviewed probability calculation and historical pilots"
+version = "0.8.0"
+description = "Auditable evidence, human-reviewed calculation, historical pilots and calibration controls"
 requires-python = ">=3.12"
 dependencies = []
 
@@ -18,6 +18,7 @@ pae-domain = "pae.domains:main"
 pae-probability-contract = "pae.probability_contract:main"
 pae-calculate = "pae.calculation:main"
 pae-historical-pilot = "pae.historical_pilot:main"
+pae-calibration = "pae.calibration:main"
 
 [tool.setuptools]
 packages = ["pae"]

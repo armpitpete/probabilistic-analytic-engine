@@ -1,0 +1,278 @@
+{
+  "calibration_version": "0.1",
+  "programme_id": "pae-resolved-case-calibration-v0.1",
+  "authority_base_sha": "a0a877066ea615ec17d5e9a1c431bd06447905f3",
+  "frozen_at": "2026-08-02T13:20:00+01:00",
+  "outcome_classes": [
+    "positive",
+    "negative",
+    "disputed",
+    "insufficient"
+  ],
+  "thresholds": {
+    "minimum_brier_improvement": 0.1,
+    "minimum_log_improvement": 0.15,
+    "minimum_top_one_accuracy": 0.5,
+    "maximum_expected_calibration_error": 0.2,
+    "minimum_correct_per_outcome_class": 1,
+    "minimum_external_reviewers": 2
+  },
+  "external_review": {
+    "self_certification_prohibited": true,
+    "minimum_reviewers": 2,
+    "required_declarations": [
+      "No authorship, employment, financial or close personal conflict with the PAE team or case packet.",
+      "No access to the frozen outcome class or withheld outcome sources before the review is signed.",
+      "Ability to inspect the evidence packet, calculation inputs and reproducibility record.",
+      "Agreement to disclose relevant domain advocacy, institutional or political commitments."
+    ],
+    "critical_finding_types": [
+      "outcome leakage",
+      "unauditable evidence provenance",
+      "irreproducible calculation",
+      "material hypothesis incompleteness",
+      "undeclared source dependency",
+      "reviewer independence failure"
+    ]
+  },
+  "cases": [
+    {
+      "id": "belarus-eu-borders-2021",
+      "title": "Belarus and the European Union's eastern borders, 2021",
+      "outcome_class": "positive",
+      "question": "Did Belarusian state action primarily facilitate and organise movement towards European Union borders for political pressure?",
+      "evidence_cutoff": "2021-11-10",
+      "resolution_standard": "Later explicit institutional attribution supported by publicly identified mechanisms and named facilitating entities.",
+      "outcome_rationale": "The later European Union sanctions record identified organised travel and facilitating entities while remaining an institutional rather than judicial finding.",
+      "packet_status": "packet_ready",
+      "evidence_source_registry": [
+        {
+          "date": "2021-11-09",
+          "institution": "Council of the European Union",
+          "title": "Council suspends visa facilitation provisions for officials of the Belarus regime",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2021/11/09/belarus-council-suspends-visa-facilitation-provisions-for-officials-of-the-belarus-regime/"
+        }
+      ],
+      "withheld_outcome_sources": [
+        {
+          "date": "2021-12-02",
+          "institution": "Council of the European Union",
+          "title": "Belarus: EU adopts 5th package of sanctions over the instrumentalisation of migrants",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2021/12/02/belarus-eu-adopts-5th-package-of-sanctions-over-continued-human-rights-abuses-and-the-instrumentalisation-of-migrants/"
+        }
+      ]
+    },
+    {
+      "id": "morocco-ceuta-2021",
+      "title": "Morocco and Ceuta, May 2021",
+      "outcome_class": "positive",
+      "question": "Were temporarily relaxed Moroccan border controls used primarily as political pressure on Spain?",
+      "evidence_cutoff": "2021-05-31",
+      "resolution_standard": "Later formal parliamentary attribution that identifies border-control relaxation and political-pressure use.",
+      "outcome_rationale": "The European Parliament later recorded temporarily eased controls and rejected the use of migration and border control as political pressure.",
+      "packet_status": "predeclared",
+      "evidence_source_registry": [
+        {
+          "date": "2021-05-18",
+          "institution": "Government of Spain",
+          "title": "Institutional declaration on the arrival of irregular migrants in Ceuta",
+          "url": "https://www.lamoncloa.gob.es/lang/en/presidente/news/Paginas/2021/20210518declaration.aspx?mode=Light"
+        }
+      ],
+      "withheld_outcome_sources": [
+        {
+          "date": "2021-06-10",
+          "institution": "European Parliament",
+          "title": "Resolution on the use of minors by Moroccan authorities in the migration crisis in Ceuta",
+          "url": "https://www.europarl.europa.eu/doceo/document/TA-9-2021-0289_EN.html"
+        }
+      ]
+    },
+    {
+      "id": "ukraine-forced-displacement-2022",
+      "title": "Forced displacement from Ukraine after the full-scale invasion, 2022",
+      "outcome_class": "negative",
+      "question": "Was the large-scale movement from Ukraine primarily a coercive migration operation rather than forced displacement caused by war?",
+      "evidence_cutoff": "2022-03-31",
+      "resolution_standard": "Later high-quality humanitarian evidence identifies the primary movement mechanism as war-driven forced displacement.",
+      "outcome_rationale": "Later United Nations reporting described the invasion as producing one of the fastest and largest displacement crises since the Second World War.",
+      "packet_status": "predeclared",
+      "evidence_source_registry": [
+        {
+          "date": "2022-03-03",
+          "institution": "United Nations High Commissioner for Refugees",
+          "title": "One million refugees have fled Ukraine in a week",
+          "url": "https://www.unhcr.org/news/news-releases/news-comment-1-million-refugees-have-fled-ukraine-week"
+        }
+      ],
+      "withheld_outcome_sources": [
+        {
+          "date": "2022-10-27",
+          "institution": "United Nations High Commissioner for Refugees",
+          "title": "Mid-Year Trends 2022",
+          "url": "https://www.unhcr.org/uk/publications/mid-year-trends-2022"
+        }
+      ]
+    },
+    {
+      "id": "mediterranean-movement-2015",
+      "title": "Mediterranean refugee and migrant movement to Europe, 2015",
+      "outcome_class": "negative",
+      "question": "Was the 2015 movement to Europe primarily a deliberate state-coercion operation rather than a multi-causal refugee and migrant flow?",
+      "evidence_cutoff": "2015-06-30",
+      "resolution_standard": "Later joint humanitarian evidence identifies conflict, persecution and poverty as the dominant aggregate drivers.",
+      "outcome_rationale": "The later UNHCR and IOM year-end account attributed the movement chiefly to conflict, persecution and poverty while allowing route-shaping state and smuggling effects.",
+      "packet_status": "predeclared",
+      "evidence_source_registry": [
+        {
+          "date": "2015-06-09",
+          "institution": "United Nations High Commissioner for Refugees",
+          "title": "Mediterranean crossings in 2015 already top 100,000",
+          "url": "https://www.unhcr.org/us/news/stories/mediterranean-crossings-2015-already-top-100-000"
+        }
+      ],
+      "withheld_outcome_sources": [
+        {
+          "date": "2015-12-22",
+          "institution": "United Nations High Commissioner for Refugees and International Organization for Migration",
+          "title": "A million refugees and migrants flee to Europe in 2015",
+          "url": "https://www.unhcr.org/uk/news/press-releases/million-refugees-and-migrants-flee-europe-2015"
+        }
+      ]
+    },
+    {
+      "id": "turkey-greece-border-2020",
+      "title": "Turkey and the Greek border, February–March 2020",
+      "outcome_class": "disputed",
+      "question": "Did Turkish state policy primarily use movement towards the Greek border as political pressure, rather than merely cease prevention during a humanitarian crisis?",
+      "evidence_cutoff": "2020-03-03",
+      "resolution_standard": "The later public record contains explicit European Union attribution and a materially different Turkish official account without adjudication.",
+      "outcome_rationale": "European Union institutions attributed political use of migratory pressure, while Turkey framed movement as a consequence of Idlib displacement and individual decisions; no public adjudication resolved the full operational question.",
+      "packet_status": "predeclared",
+      "evidence_source_registry": [
+        {
+          "date": "2020-02-28",
+          "institution": "Republic of Türkiye Ministry of Foreign Affairs",
+          "title": "Statement regarding migrants and asylum seekers in Turkey",
+          "url": "https://www.mfa.gov.tr/sc_-14_-ulkemizdeki-gocmen-ve-siginmacilar-hk-sc.en.mfa"
+        },
+        {
+          "date": "2020-03-02",
+          "institution": "United Nations High Commissioner for Refugees",
+          "title": "UNHCR statement on the situation at the Turkey–EU border",
+          "url": "https://www.unhcr.org/news/news-releases/unhcr-statement-situation-turkey-eu-border"
+        }
+      ],
+      "withheld_outcome_sources": [
+        {
+          "date": "2020-03-04",
+          "institution": "Council of the European Union",
+          "title": "Statement on the situation at the EU's external borders",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2020/03/04/statement-on-the-situation-at-the-eus-external-borders/"
+        },
+        {
+          "date": "2020-03-06",
+          "institution": "Council of the European Union",
+          "title": "Statement of the Foreign Affairs Council on Syria and Turkey",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2020/03/06/statement-of-the-foreign-affairs-council-on-syria-and-turkey/"
+        }
+      ]
+    },
+    {
+      "id": "russia-norway-storskog-2015",
+      "title": "Russia–Norway Storskog route, 2015",
+      "outcome_class": "disputed",
+      "question": "Was the abrupt 2015 Storskog route primarily enabled by deliberate Russian state pressure on Norway?",
+      "evidence_cutoff": "2015-11-15",
+      "resolution_standard": "Later public records establish the route, Russian border passage and policy changes but do not adjudicate intent; competing interpretations remain material.",
+      "outcome_rationale": "Norwegian records document the abrupt route and subsequent control changes, while the public record remains divided on whether this reflected deliberate pressure, permissive policy or route discovery.",
+      "packet_status": "predeclared",
+      "evidence_source_registry": [
+        {
+          "date": "2015-10-20",
+          "institution": "Norwegian Ministry of Justice and Public Security",
+          "title": "GI-12/2015 — Asylum applications from people entering Norway from Russia",
+          "url": "https://www.regjeringen.no/no/dokumenter/gi-122015-asylsoknader-fra-personer-som-har-reist-inn-i-norge-fra-russland--behandling-og-prioritering/id2458496/"
+        }
+      ],
+      "withheld_outcome_sources": [
+        {
+          "date": "2015-11-24",
+          "institution": "Norwegian Ministry of Justice and Public Security",
+          "title": "Procedures for rapid handling at the Storskog border",
+          "url": "https://www.regjeringen.no/no/dokumenter/instruks---rutiner-for-rask-handtering-av-personer-som-ankommer-over-norskrussisk-landegrense-storskog-uten-gyldig-visum-eller-annen-gyldig-innreisetillatelse-til-norge/id2474019/"
+        },
+        {
+          "date": "2016-11-30",
+          "institution": "Norwegian Ministry of Justice and Public Security",
+          "title": "GI-15/2016 — Storskog portfolio",
+          "url": "https://www.regjeringen.no/no/dokumenter/gi-152016--storskogportefoljen--behandling-av-asylsoknader-fremsatt-i-2015-fra-per-soner-som-har-flerreisevisum-eller-oppholdstillatelse-i-russland-som-er-utlopt-i-tid/id2522280/"
+        }
+      ]
+    },
+    {
+      "id": "finland-russia-eastern-border-2023",
+      "title": "Finland's eastern border with Russia, 2023–2024",
+      "outcome_class": "insufficient",
+      "question": "Does the public record establish central Russian command of the 2023 movement towards Finland's eastern border?",
+      "evidence_cutoff": "2023-11-30",
+      "resolution_standard": "Publicly inspectable evidence must establish central command, not only facilitation, changed border practice or a national-security assessment.",
+      "outcome_rationale": "Finnish authorities later maintained that foreign authorities or other actors facilitated instrumentalised migration, but the public record did not disclose evidence sufficient to establish the central-command chain under this stricter question.",
+      "packet_status": "predeclared",
+      "evidence_source_registry": [
+        {
+          "date": "2023-11-22",
+          "institution": "Finnish Government",
+          "title": "Finland to close more border crossing points",
+          "url": "https://valtioneuvosto.fi/en/-/1410869/finland-to-close-more-border-crossing-points"
+        }
+      ],
+      "withheld_outcome_sources": [
+        {
+          "date": "2024-07-16",
+          "institution": "Finnish Government",
+          "title": "Finland enacts legislation to combat instrumentalised migration",
+          "url": "https://valtioneuvosto.fi/en/-/1410869/finland-enacts-legislation-to-combat-instrumentalised-migration"
+        }
+      ]
+    },
+    {
+      "id": "libya-europe-migration-threat-2011",
+      "title": "Libya–Europe migration threat and conflict displacement, 2011",
+      "outcome_class": "insufficient",
+      "question": "Did the Gaddafi regime operationally create a migration flow towards Europe in 2011 to implement its public threat?",
+      "evidence_cutoff": "2011-03-16",
+      "resolution_standard": "Public evidence must distinguish implementation of a state coercion plan from conflict-driven displacement and ordinary mixed migration.",
+      "outcome_rationale": "The threat was publicly recorded, but later humanitarian records primarily document conflict displacement and do not provide an inspectable command-and-implementation chain for the threatened operation.",
+      "packet_status": "predeclared",
+      "evidence_source_registry": [
+        {
+          "date": "2011-03-10",
+          "institution": "European Parliament",
+          "title": "Resolution on the Southern Neighbourhood and Libya",
+          "url": "https://www.europarl.europa.eu/doceo/document/TA-7-2011-0095_EN.html"
+        },
+        {
+          "date": "2011-03-16",
+          "institution": "European Parliament",
+          "title": "Parliamentary question: Gaddafi admits wave of illegal immigration to Europe",
+          "url": "https://www.europarl.europa.eu/doceo/document/E-7-2011-002902_EN.html"
+        }
+      ],
+      "withheld_outcome_sources": [
+        {
+          "date": "2011-09-15",
+          "institution": "European Parliament",
+          "title": "Resolution on the situation in Libya",
+          "url": "https://www.europarl.europa.eu/doceo/document/TA-7-2011-0386_EN.html"
+        },
+        {
+          "date": "2012-06-18",
+          "institution": "United Nations High Commissioner for Refugees",
+          "title": "UNHCR report shows a record 800,000 people forced to flee across borders in 2011",
+          "url": "https://www.unhcr.org/news/news-releases/unhcr-report-shows-record-800000-people-forced-flee-across-borders-2011"
+        }
+      ]
+    }
+  ]
+}
