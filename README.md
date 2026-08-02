@@ -24,9 +24,11 @@ PAE provides:
 - per-hypothesis supporting and contrary coverage;
 - search diaries and negative-evidence records;
 - configurable sufficiency profiles;
-- Value-of-Information research ranking.
+- Value-of-Information research ranking;
+- reusable domain modules;
+- sourced historical comparison libraries.
 
-Legacy v0.1 and strict v0.2 cases remain supported. Cases using research protocol v0.3 gain the research-control outputs.
+The first specialist module covers **state migration coercion**. It contains ten evidence categories, fifteen indicators, explicit inference guards and six differently classified comparison cases, including non-coercive and organic comparators.
 
 ## Governing principles
 
@@ -34,23 +36,33 @@ Legacy v0.1 and strict v0.2 cases remain supported. Cases using research protoco
 - Repeated reporting from one underlying source counts as one evidence stream.
 - Source authority is claim-specific.
 - Search failure is not evidence of absence.
+- Institutional attribution is not judicial proof.
+- Historical similarity is not a probability calculation.
 - Motive, means and opportunity do not establish conduct, coordination or command.
 - Alternative explanations and contrary evidence must be actively sought.
 - Overlapping and mixed causes must be represented where appropriate.
 - Unknown and insufficient information are valid outcomes.
 - Collection, analysis, public wording and publication authority remain separate.
 
-## Command line
+## Commands
+
+Assess a case:
 
 ```text
 python -m pae path/to/case.json
 ```
 
-Use `--output path/to/result.json` for a deterministic JSON assessment file.
+Validate a domain module and historical library:
+
+```text
+python -m pae.domains path/to/module.json path/to/historical-cases.json
+```
+
+Both commands support `--output path/to/result.json`.
 
 ## Current boundary
 
-PAE does not yet calculate attribution probabilities. Probability work remains blocked until the domain comparison library and probability contract are complete.
+PAE does not yet calculate attribution probabilities. The remaining bounded unit is the Probability Engine v0.1 contract and validator. Automatic attribution will remain disabled.
 
 ## Donor systems
 
