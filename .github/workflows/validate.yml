@@ -31,6 +31,8 @@ jobs:
       - run: python -m pae.calibration prepare-review calibration/corpus-v0.1.json --output generated/external-review-packet.json
       - run: python -m pae.human_workflow prepare calibration/corpus-v0.1.json --output generated/human-workflow-bundle.json
       - run: python -m pae.human_workflow validate-register calibration/corpus-v0.1.json calibration/assignment-register-v0.1.json --output generated/assignment-register-status.json
+      - run: python -m pae.reviewer_intake candidate fixtures/reviewer-candidate-method-fixture.json --output generated/reviewer-candidate-status.json
+      - run: python -m pae.reviewer_intake release fixtures/reviewer-candidate-method-fixture.json belarus-eu-borders-2021 --output generated/reviewer-packet-release.json
       - run: test -s generated/ceuta-v0.1-assessment.json
       - run: test -s generated/ceuta-v0.2-assessment.json
       - run: test -s generated/ceuta-v0.3-assessment.json
@@ -42,3 +44,5 @@ jobs:
       - run: test -s generated/external-review-packet.json
       - run: test -s generated/human-workflow-bundle.json
       - run: test -s generated/assignment-register-status.json
+      - run: test -s generated/reviewer-candidate-status.json
+      - run: test -s generated/reviewer-packet-release.json

@@ -1,0 +1,21 @@
+{
+  "candidate_id": "fixture-reviewer-001",
+  "name_or_stable_identifier": "Artificial reviewer fixture 001",
+  "institution": "Artificial Method Institute",
+  "contact_route": "fixture@example.invalid",
+  "proposed_roles": ["methods", "integrity"],
+  "expertise": ["probability calibration", "research reproducibility"],
+  "prepared_any_pae_case": false,
+  "approved_any_pae_case": false,
+  "seen_outcome_material": false,
+  "authored_case_source": false,
+  "advised_party_to_case": false,
+  "financial_conflict": false,
+  "employment_conflict": false,
+  "close_personal_conflict": false,
+  "willing_to_sign_confidential_record": true,
+  "other_conflicts_or_commitments": [],
+  "clarification_required": [],
+  "case_exclusions": [],
+  "fixture_warning": "Artificial test record only. It is not a real person or reviewer assignment."
+}

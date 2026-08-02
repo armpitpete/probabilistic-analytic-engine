@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "probabilistic-analytic-engine"
-version = "0.9.0"
+version = "0.10.0"
 description = "Auditable evidence, human-reviewed calculation, calibration and external-review workflows"
 requires-python = ">=3.12"
 dependencies = []
@@ -20,6 +20,7 @@ pae-calculate = "pae.calculation:main"
 pae-historical-pilot = "pae.historical_pilot:main"
 pae-calibration = "pae.calibration:main"
 pae-human-workflow = "pae.human_workflow:main"
+pae-reviewer-intake = "pae.reviewer_intake:main"
 
 [tool.setuptools]
 packages = ["pae"]

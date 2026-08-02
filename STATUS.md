@@ -1,6 +1,6 @@
 ---
 completion_authority: true
-status: EXTERNAL_HUMAN_INPUT_REQUIRED
+status: REVIEWER_INTAKE_IMPLEMENTATION_IN_PROGRESS
 ---
 
 # Probabilistic Analytic Engine — Current Status
@@ -10,42 +10,34 @@ status: EXTERNAL_HUMAN_INPUT_REQUIRED
 - Repository: `armpitpete/probabilistic-analytic-engine`
 - Accepted calibration infrastructure: `4030ef0b70747a4684be6708da0c10dbfaf81d9e`
 - Accepted analyst and external-review workflow: `b7077ea6c5d750899df62ed689e98ced4fb31103`
+- Accepted outreach and recruitment record: `a747b62ec0bf32b4a93e9eb9978748b9273b5193`
 - Parent calibration programme: Issue #19 — open
-- Package version: `0.9.0`
+- Active bounded unit: Issue #27 — PAE-14
+- Active branch: `workflow/pae-14-reviewer-intake`
+- Candidate package version: `0.10.0`
 
-## Repository work complete
+## Outreach state
 
-PAE now contains:
+First-wave institutional requests were sent on 2 August 2026 to migration-domain, reproducibility, statistical and research-integrity channels. No reviewer has been appointed, no case packet has been released and no payment or contractual commitment has been made.
 
-- a frozen balanced eight-case calibration corpus;
-- exactly two positive, two negative, two disputed and two insufficient-public-information outcomes;
-- predeclared cutoffs, resolution standards and withheld outcome sources;
-- fixed pass, correction and stop criteria;
-- outcome-leakage and corpus-balance controls;
-- aggregate Brier, logarithmic, calibration and discrimination scoring;
-- one outcome-blinded analyst packet per case;
-- one outcome-blinded external-review packet per case;
-- blank probability forms without suggested values;
-- source-authority, dependency, contrary-evidence and negative-search worksheets;
-- analyst preparation and approval roles;
-- a blank eight-case assignment register;
-- reviewer invitation and declaration materials;
-- assignment-register validation and role-overlap safeguards;
-- schemas and command-line tools for returned human records.
+## Current bounded unit
 
-## Validation
+PAE-14 prepares the response-intake and packet-handoff path by adding:
 
-The accepted PAE-11 candidate passed on Python 3.12 with:
+- reviewer-candidate intake records;
+- explicit expertise and proposed-role fields;
+- independence, conflict, source-authorship and outcome-exposure declarations;
+- eligible, needs-clarification, unsuitable and withdrawn states;
+- refusal of packet release before the eligibility gate passes;
+- case-specific exclusion controls;
+- an authenticated packet-release checklist;
+- delivery and return-record requirements;
+- reply, clarification, follow-up and decline templates;
+- a machine-readable schema, command-line validator and deterministic tests.
 
-- package installation;
-- bytecode compilation;
-- 118 deterministic tests;
-- all legacy assessment, domain, probability-contract, calculation, pilot and calibration commands;
-- calibration-manifest and blinded-review generation;
-- human-workflow bundle generation;
-- blank assignment-register validation as valid but incomplete.
+Institutional affiliation, prestige or agreement with PAE cannot substitute for individual screening.
 
-## Genuine human evidence still required
+## Human evidence still required
 
 Issue #19 cannot be completed until real people provide:
 
@@ -57,12 +49,11 @@ Issue #19 cannot be completed until real people provide:
 6. a completed result bundle for aggregate scoring;
 7. an explicit human accept, correct or stop decision.
 
-The repository must not substitute synthetic identities, AI-generated signatures or internal role labels for independent external review.
-
 ## Safety boundary
 
 PAE remains unauthorised for:
 
+- releasing a packet to an unscreened person;
 - live unresolved cases;
 - automatic evidence collection;
 - model-generated priors or likelihood assignments;
@@ -70,8 +61,15 @@ PAE remains unauthorised for:
 - public conclusions;
 - publication, user interface or deployment.
 
-A complete human assignment register or a calibration `pass_candidate` does not automatically authorise live use.
+## Acceptance gate
 
-## Current gate
+Require:
 
-The next action requires owner-supported recruitment or nomination of genuine analysts, approvers and external reviewers. No live-case work has begun.
+- all 118 accepted tests remain green;
+- reviewer intake and release tests pass;
+- hard conflicts and outcome exposure block release;
+- source authorship requires case-specific clarification;
+- institutional affiliation cannot replace concrete expertise;
+- case exclusions block only the affected case;
+- Python 3.12 produces candidate and packet-release records;
+- one exact pull-request head is returned for protected review.

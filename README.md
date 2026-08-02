@@ -8,7 +8,7 @@ It is not a black-box truth calculator.
 
 ## Current capabilities
 
-PAE provides evidence acquisition, provenance, hypothesis testing, research control, domain modules, human-reviewed probability calculation, cutoff-controlled historical pilots, resolved-case calibration controls and outcome-blinded human workflow packets.
+PAE provides evidence acquisition, provenance, hypothesis testing, research control, domain modules, human-reviewed probability calculation, cutoff-controlled historical pilots, resolved-case calibration controls, outcome-blinded human workflow packets and reviewer-intake safeguards.
 
 The first specialist module covers **state migration coercion**.
 
@@ -45,6 +45,19 @@ The assignment register enforces:
 
 No identities, probabilities, signatures or findings are generated automatically. Repository checks validate declarations but cannot prove that an external person is genuinely independent.
 
+## Reviewer intake and packet release
+
+Every respondent must receive an individual intake record before a full packet is released. The validator records concrete expertise, proposed review roles, case exposure, source authorship, advisory relationships, conflicts and willingness to authenticate the returned review.
+
+Possible intake states are:
+
+- `eligible`;
+- `needs_clarification`;
+- `unsuitable`;
+- `withdrawn`.
+
+Institutional affiliation does not establish eligibility. Packet release also requires case-specific exclusion checks, an outcome-free packet, a recorded checksum and an authenticated return process.
+
 ## Governing principles
 
 - Evidence and probability remain separate.
@@ -58,6 +71,7 @@ No identities, probabilities, signatures or findings are generated automatically
 - Human analysts own priors and likelihood assignments.
 - Calculation drafts require role-separated review.
 - Outcome labels and post-cutoff records must remain hidden during external review.
+- Institutional prestige does not prove reviewer independence.
 - One retrospective success does not establish calibration.
 - A calibration pass candidate never automatically authorises live use.
 - Unknown and insufficient information are valid outcomes.
@@ -77,6 +91,8 @@ python -m pae.calibration prepare-review calibration/corpus-v0.1.json --output r
 python -m pae.calibration aggregate calibration/corpus-v0.1.json results.json --output calibration-report.json
 python -m pae.human_workflow prepare calibration/corpus-v0.1.json --output human-workflow-bundle.json
 python -m pae.human_workflow validate-register calibration/corpus-v0.1.json calibration/assignment-register-v0.1.json --output assignment-status.json
+python -m pae.reviewer_intake candidate candidate.json --output candidate-status.json
+python -m pae.reviewer_intake release candidate.json case-id --output packet-release.json
 ```
 
 ## Current boundary
