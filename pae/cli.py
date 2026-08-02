@@ -1,4 +1,4 @@
-"""Command-line interface for Evidence Acquisition Manager v0.1."""
+"""Command-line interface for PAE structured assessments."""
 
 from __future__ import annotations
 
@@ -7,12 +7,13 @@ import json
 import sys
 from pathlib import Path
 
-from .acquisition import AcquisitionError, assess_case
+from .acquisition import AcquisitionError
+from .engine import assess_case
 
 
 def parser() -> argparse.ArgumentParser:
     command = argparse.ArgumentParser(
-        description="Assess evidence acquisition coverage without calculating probabilities."
+        description="Assess evidence coverage and structure without calculating probabilities."
     )
     command.add_argument("case", type=Path, help="Path to a PAE case JSON file")
     command.add_argument("--output", type=Path, help="Optional output JSON path")
