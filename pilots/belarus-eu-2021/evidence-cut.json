@@ -1,0 +1,78 @@
+{
+  "pilot_id": "belarus-eu-2021",
+  "case_id": "belarus-eu-borders-2021",
+  "title": "Belarus–European Union border movement, 2021 — evidence cut",
+  "evidence_cutoff": "2021-11-10T23:59:59+00:00",
+  "question": "As at the evidence cutoff, which primary explanation best accounts for the organised movement of people through Belarus towards European Union borders?",
+  "scope_note": "The primary-mechanism hypotheses do not deny that migrants and refugees had individual motives, protection needs or agency.",
+  "hypothesis_ids": [
+    "h-organic-primary",
+    "h-state-facilitation-primary",
+    "h-insufficient-public-evidence"
+  ],
+  "sources": [
+    {
+      "id": "src-eu-2021-07-30",
+      "date": "2021-07-30",
+      "institution": "Council of the European Union",
+      "title": "Declaration on the instrumentalisation of migrants and refugees by the Belarusian regime",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2021/07/30/belarus-declaration-of-the-high-representative-on-behalf-of-the-eu-on-the-instrumentalisation-of-migrants-and-refugees-by-the-regime/",
+      "source_class": "official_claim",
+      "independence_group": "eu-political-attribution",
+      "included_claim": "The EU condemned what it described as the Belarusian regime's instrumentalisation of migrants and refugees for political goals.",
+      "limitations": "A public attribution by an involved political institution; underlying operational evidence was not fully disclosed."
+    },
+    {
+      "id": "src-european-council-2021-10-22",
+      "date": "2021-10-22",
+      "institution": "European Council",
+      "title": "European Council conclusions, 21–22 October 2021",
+      "url": "https://www.consilium.europa.eu/en/meetings/european-council/2021/10/21-22/",
+      "source_class": "official_claim",
+      "independence_group": "eu-political-attribution",
+      "included_claim": "EU leaders described an ongoing hybrid attack organised by the Belarusian regime and announced further restrictive measures.",
+      "limitations": "A collective political assessment; it does not by itself establish the complete command or evidentiary chain."
+    },
+    {
+      "id": "src-council-2021-11-09",
+      "date": "2021-11-09",
+      "institution": "Council of the European Union",
+      "title": "Council suspends visa facilitation provisions for officials of the Belarus regime",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2021/11/09/belarus-council-suspends-visa-facilitation-provisions-for-officials-of-the-belarus-regime/",
+      "source_class": "official_specific_mechanism",
+      "independence_group": "council-specific-mechanism",
+      "included_claim": "The Council stated that Belarus began organising flights and internal travel to facilitate transit towards the EU and suspended the readmission agreement.",
+      "limitations": "The statement gives a specific mechanism but does not disclose all underlying records or intelligence."
+    },
+    {
+      "id": "src-unhcr-iom-2021-11-09",
+      "date": "2021-11-09",
+      "institution": "UNHCR and International Organization for Migration",
+      "title": "Call for immediate de-escalation at the Belarus–Poland border",
+      "url": "https://www.unhcr.org/uk/news/press-releases/unhcr-and-iom-call-immediate-de-escalation-belarus-poland-border",
+      "source_class": "independent_humanitarian_observation",
+      "independence_group": "un-humanitarian-observation",
+      "included_claim": "The agencies reported a large group including women and children moving towards the Bruzgi crossing, called for protection access, and condemned instrumentalisation and misleading promises.",
+      "limitations": "The agencies focused on humanitarian access and did not publish a complete attribution or command investigation."
+    },
+    {
+      "id": "src-eu-2021-11-10",
+      "date": "2021-11-10",
+      "institution": "European Union",
+      "title": "Declaration on the situation at the European Union border",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2021/11/10/belarus-declaration-by-the-high-representative-on-behalf-of-the-european-union-on-the-situation-at-the-european-union-border/",
+      "source_class": "official_operational_observation",
+      "independence_group": "border-operational-observation",
+      "included_claim": "The EU stated that groups were escorted by armed Belarusian security forces towards EU borders to force illegal entries.",
+      "limitations": "The public statement does not disclose the full observation chain, operational orders or independent authentication."
+    }
+  ],
+  "exclusions": [
+    "All material published after 10 November 2021.",
+    "The 15 November 2021 widened sanctions criteria.",
+    "The 2 December 2021 sanctions naming airlines, tour operators and hotels.",
+    "Later retrospective policy summaries."
+  ],
+  "hindsight_control": "Outcome records are stored separately and are not referenced by the calculation plan.",
+  "packet_sha256": "be2a5d9f5f9eaf82b93c61965e078f40119335ab02023b5d631e59fc0616f045"
+}
