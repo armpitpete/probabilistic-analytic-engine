@@ -1,0 +1,173 @@
+{
+  "library_version": "0.1",
+  "domain_id": "state-migration-coercion",
+  "title": "State Migration Coercion — Historical Comparison Library",
+  "method_note": "This library records the quality and status of public institutional evidence. Institutional attribution is not converted into judicial proof. Cases are included to test mechanisms and alternatives, not to generate an automatic base rate.",
+  "cases": [
+    {
+      "id": "belarus-eu-borders-2021",
+      "title": "Belarus and the European Union's eastern borders, 2021",
+      "period": "June–December 2021",
+      "actors": ["Belarusian authorities", "European Union", "Poland", "Lithuania", "Latvia", "airlines", "tour operators", "hotels"],
+      "classification": "strong_official_attribution",
+      "resolution_status": "institutionally_attributed",
+      "public_evidence_quality": "high",
+      "mechanism_summary": "The European Union attributed organised travel, internal transport and facilitation of irregular crossings to the Belarusian regime and associated commercial actors, and imposed targeted sanctions on named individuals and entities.",
+      "public_evidence_summary": "Council records identify companies, tour operators and hotels said to have helped incite and organise crossings. Later EU policy material describes organised flights and internal transport facilitating transit towards the EU.",
+      "counterevidence_and_alternatives": "Public EU records do not disclose all intelligence or operational evidence. Migrants also had genuine individual motives and protection needs, and criminal facilitation may have operated alongside state action.",
+      "limitations": "Institutional attribution and sanctions are not criminal convictions. The library does not independently authenticate undisclosed intelligence.",
+      "relevant_indicators": ["state-linked-transport", "visa-or-entry-pattern-change", "sanctioned-facilitator", "publicly-documented-facilitation", "explicit-political-demand"],
+      "analytical_lessons": "A strong public attribution is more credible when it identifies mechanisms and named facilitating entities, but source dependence and humanitarian drivers must still be separated.",
+      "sources": [
+        {
+          "institution": "Council of the European Union",
+          "title": "Belarus: EU adopts 5th package of sanctions over continued human rights abuses and the instrumentalisation of migrants",
+          "date": "2021-12-02",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2021/12/02/belarus-eu-adopts-5th-package-of-sanctions-over-continued-human-rights-abuses-and-the-instrumentalisation-of-migrants/",
+          "supports": "Named entities were sanctioned for helping incite and organise illegal border crossings and participating in instrumentalisation for political purposes."
+        },
+        {
+          "institution": "Council of the European Union",
+          "title": "Belarus policy page — instrumentalisation of migrants for political purposes",
+          "date": "2026-01-21",
+          "url": "https://www.consilium.europa.eu/en/policies/belarus/",
+          "supports": "The EU's retrospective account states that Belarus organised flights and internal transport to facilitate migrant transit to EU borders."
+        }
+      ]
+    },
+    {
+      "id": "morocco-ceuta-2021",
+      "title": "Morocco and Ceuta, May 2021",
+      "period": "17 May–10 June 2021",
+      "actors": ["Moroccan authorities", "Spain", "European Parliament", "people crossing into Ceuta"],
+      "classification": "parliamentary_attribution",
+      "resolution_status": "politically_attributed_not_judicially_resolved",
+      "public_evidence_quality": "moderate",
+      "mechanism_summary": "The European Parliament concluded that Moroccan border controls had been temporarily relaxed and rejected the use of border control and migration, including minors, as political pressure on Spain.",
+      "public_evidence_summary": "The adopted resolution described temporarily eased controls, opened barriers and a failure to prevent crossings during a bilateral diplomatic crisis, while recording Moroccan statements about the dispute.",
+      "counterevidence_and_alternatives": "The resolution was a political institutional finding rather than a judicial process. Participants may have acted on rumours, individual opportunity or economic motives, and the exact command chain was not publicly established.",
+      "limitations": "The public record does not provide authenticated operational orders or a complete source-dependency account for every factual assertion in the resolution.",
+      "relevant_indicators": ["enforcement-withdrawal", "explicit-political-demand", "surge-after-dispute", "rapid-control-restoration", "publicly-documented-facilitation"],
+      "analytical_lessons": "Border relaxation during a documented dispute raises the probability of deliberate pressure, but command evidence is still required to distinguish central instruction, local discretion and operational failure.",
+      "sources": [
+        {
+          "institution": "European Parliament",
+          "title": "Resolution on the use of minors by Moroccan authorities in the migration crisis in Ceuta",
+          "date": "2021-06-10",
+          "url": "https://www.europarl.europa.eu/doceo/document/TA-9-2021-0289_FR.html",
+          "supports": "The adopted resolution records eased border controls and rejects the use of migration and border controls as political pressure."
+        }
+      ]
+    },
+    {
+      "id": "turkey-greece-border-2020",
+      "title": "Turkey and the Greek border, February–March 2020",
+      "period": "28 February–March 2020",
+      "actors": ["Turkey", "Greece", "European Union", "refugees and migrants"],
+      "classification": "official_attribution_contested",
+      "resolution_status": "contested",
+      "public_evidence_quality": "moderate",
+      "mechanism_summary": "European Union home affairs ministers rejected what they described as Turkey's use of migratory pressure for political purposes after Turkey said it would no longer prevent movement towards Europe.",
+      "public_evidence_summary": "The Council's statement explicitly connected the border situation with political pressure while also acknowledging Turkey's substantial refugee-hosting burden.",
+      "counterevidence_and_alternatives": "The source is an EU political statement from one side of an active dispute. Turkey's security, humanitarian and burden-sharing arguments, individual refugee choices and conflict escalation in Syria are independent explanatory factors.",
+      "limitations": "The library does not treat the Council statement as adjudication and does not contain a complete Turkish evidentiary response or operational record.",
+      "relevant_indicators": ["explicit-political-demand", "surge-after-dispute", "coordinated-origin-messaging", "war-persecution-driver", "publicly-documented-facilitation"],
+      "analytical_lessons": "A state can signal policy change openly while the causal picture remains mixed because genuine forced displacement and political bargaining operate at the same time.",
+      "sources": [
+        {
+          "institution": "Council of the European Union",
+          "title": "Statement on the situation at the EU's external borders",
+          "date": "2020-03-04",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2020/03/04/statement-on-the-situation-at-the-eus-external-borders/",
+          "supports": "EU ministers rejected Turkey's use of migratory pressure for political purposes while acknowledging the burden of hosting millions of refugees."
+        }
+      ]
+    },
+    {
+      "id": "finland-russia-eastern-border-2023",
+      "title": "Finland's eastern border with Russia, 2023–2024",
+      "period": "August 2023–April 2024",
+      "actors": ["Finland", "Russia", "third-country nationals", "Finnish Border Guard"],
+      "classification": "official_attribution_unresolved",
+      "resolution_status": "unresolved",
+      "public_evidence_quality": "moderate",
+      "mechanism_summary": "Finnish authorities assessed that foreign authorities or other actors facilitated visa-less arrivals from Russia and described the activity as instrumentalised migration and hybrid influence.",
+      "public_evidence_summary": "Government statements cite authority observations, changing entry patterns and the movement of more than 1,300 third-country nationals. Finland closed border crossings and reported that the flow ceased under the restrictions.",
+      "counterevidence_and_alternatives": "Most event-specific intelligence and operational evidence is not public. Changes in Russian border practice, criminal intermediaries, route discovery and migrants' individual motives could contribute without proving a centrally directed operation.",
+      "limitations": "The attribution remains an executive assessment rather than a publicly adjudicated finding. The absence of disclosed command evidence limits conclusions about Russian central direction.",
+      "relevant_indicators": ["visa-or-entry-pattern-change", "surge-after-dispute", "rapid-control-restoration", "publicly-documented-facilitation", "war-persecution-driver"],
+      "analytical_lessons": "A credible national-security assessment can justify precautionary policy while remaining analytically unresolved for public attribution purposes.",
+      "sources": [
+        {
+          "institution": "Finnish Government",
+          "title": "Finland to close more border crossing points",
+          "date": "2023-11-22",
+          "url": "https://valtioneuvosto.fi/en/-/1410869/finland-to-close-more-border-crossing-points",
+          "supports": "Finnish authorities stated that foreign authorities and other actors had facilitated entry and assessed the situation as instrumentalised migration."
+        },
+        {
+          "institution": "Finnish Government",
+          "title": "Situation at Finland's eastern border",
+          "date": "2024-04-15",
+          "url": "https://valtioneuvosto.fi/situation-at-finlands-eastern-border",
+          "supports": "The government summary records more than 1,300 arrivals and the official assessment of facilitation by foreign authorities or other actors."
+        }
+      ]
+    },
+    {
+      "id": "ukraine-forced-displacement-2022",
+      "title": "Forced displacement from Ukraine after the full-scale invasion, 2022",
+      "period": "February–December 2022",
+      "actors": ["people displaced from Ukraine", "Russian Federation", "Ukraine", "European host states", "UNHCR"],
+      "classification": "non_coercive_forced_displacement_comparator",
+      "resolution_status": "non_coercive_comparator",
+      "public_evidence_quality": "high",
+      "mechanism_summary": "Large-scale movement followed the full-scale invasion, widespread destruction and civilian danger. It provides a comparator in which the primary movement mechanism is documented forced displacement rather than pressure created through border facilitation by a transit state.",
+      "public_evidence_summary": "UNHCR recorded approximately 5.9 million internally displaced people and nearly 5.7 million refugees and asylum-seekers from Ukraine across Europe by the end of 2022.",
+      "counterevidence_and_alternatives": "Individual destinations and onward movements were shaped by family links, host policies, transport access and economic choices. Those secondary factors do not displace the documented war-driven origin of the mass displacement.",
+      "limitations": "This comparator does not imply that every wartime route is free from exploitation, trafficking, propaganda or state policy effects.",
+      "relevant_indicators": ["war-persecution-driver", "aid-or-economic-shock"],
+      "analytical_lessons": "High-volume cross-border movement is not itself evidence of coercive instrumentalisation. The engine must first test independent forced-displacement drivers.",
+      "sources": [
+        {
+          "institution": "United Nations High Commissioner for Refugees",
+          "title": "Ukraine situation — Global Report 2022",
+          "date": "2023-06-01",
+          "url": "https://reporting.unhcr.org/ukraine-situation-global-report-2022",
+          "supports": "UNHCR records war-driven internal displacement and refugee movement across Europe."
+        }
+      ]
+    },
+    {
+      "id": "mediterranean-refugee-movement-2015",
+      "title": "Mediterranean refugee and migrant movement to Europe, 2015",
+      "period": "January–December 2015",
+      "actors": ["refugees and migrants", "people smugglers", "European states", "Turkey", "UNHCR", "IOM"],
+      "classification": "organic_multi_causal_comparator",
+      "resolution_status": "multi_causal_comparator",
+      "public_evidence_quality": "high",
+      "mechanism_summary": "More than one million people reached Europe by sea or land amid war, persecution, poverty, smuggling, aid cuts and family or safety decisions. The movement provides a comparator for large organic and multi-causal flows.",
+      "public_evidence_summary": "UNHCR and IOM reported that most sea arrivals came from leading refugee-producing countries and that half were Syrians escaping war. UNHCR separately identified conflict, deteriorating living conditions and reduced humanitarian aid as drivers of onward movement.",
+      "counterevidence_and_alternatives": "Transit-state policies, border decisions, smuggling markets and European policy responses shaped routes and timing. The comparator therefore represents multi-causality rather than a claim that states played no role.",
+      "limitations": "Aggregate data cannot determine each person's motive or exclude local episodes of facilitation, coercion or opportunistic exploitation.",
+      "relevant_indicators": ["war-persecution-driver", "aid-or-economic-shock", "coordinated-origin-messaging"],
+      "analytical_lessons": "Large surges can emerge from interacting humanitarian and economic pressures. A coercion assessment must explain what deliberate state mechanism adds beyond those base conditions.",
+      "sources": [
+        {
+          "institution": "United Nations High Commissioner for Refugees and International Organization for Migration",
+          "title": "A million refugees and migrants flee to Europe in 2015",
+          "date": "2015-12-22",
+          "url": "https://www.unhcr.org/uk/news/press-releases/million-refugees-and-migrants-flee-europe-2015",
+          "supports": "The agencies attribute the movement to persecution, conflict and poverty and report the main countries and routes of origin."
+        },
+        {
+          "institution": "United Nations High Commissioner for Refugees",
+          "title": "Seven factors behind movement of Syrian refugees to Europe",
+          "date": "2015-09-25",
+          "url": "https://www.unhcr.org/news/briefing-notes/seven-factors-behind-movement-syrian-refugees-europe",
+          "supports": "UNHCR identifies war, deteriorating conditions and humanitarian aid cuts as drivers of onward movement."
+        }
+      ]
+    }
+  ]
+}

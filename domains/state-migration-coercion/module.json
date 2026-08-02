@@ -1,0 +1,119 @@
+{
+  "interface_version": "0.1",
+  "domain_id": "state-migration-coercion",
+  "version": "0.1.0",
+  "title": "State Migration Coercion",
+  "scope": "Assessment of claims that a state deliberately permits, facilitates, redirects or amplifies cross-border human movement to pressure another state. The module also requires organic, humanitarian, administrative-failure and mixed-cause alternatives.",
+  "applicable_claims": [
+    "A state deliberately reduced border enforcement to create pressure.",
+    "A state organised or facilitated transport towards another state's border.",
+    "An organic movement was later exploited by state actors.",
+    "A third state encouraged, coordinated or directed migration pressure.",
+    "A border surge was primarily non-coercive or resulted from ordinary failure."
+  ],
+  "required_hypothesis_classes": [
+    "organic",
+    "ordinary_failure",
+    "domestic_deliberate",
+    "mixed",
+    "foreign_indirect",
+    "foreign_direct",
+    "insufficient_information"
+  ],
+  "evidence_categories": [
+    {
+      "id": "border_enforcement_baseline",
+      "question": "How did actual enforcement differ from the documented operational baseline?",
+      "preferred_evidence": ["deployment records", "shift logs", "orders", "geolocated observations", "independent witness records"],
+      "alternative_explanations": ["insufficient personnel", "confusion", "sudden crowd size", "safety withdrawal", "ordinary command failure"]
+    },
+    {
+      "id": "command_and_control",
+      "question": "Is there inspectable evidence of instruction, permission, coordination or command?",
+      "preferred_evidence": ["authenticated orders", "communications", "command testimony", "audit records"],
+      "alternative_explanations": ["local discretion", "miscommunication", "retrospective political interpretation"]
+    },
+    {
+      "id": "transport_and_logistics",
+      "question": "Were travel, accommodation, documents or onward movement deliberately facilitated?",
+      "preferred_evidence": ["transport manifests", "ticketing records", "visa patterns", "hotel records", "financial records"],
+      "alternative_explanations": ["commercial demand", "smuggling networks", "diaspora assistance", "ordinary transit routes"]
+    },
+    {
+      "id": "mobilisation_networks",
+      "question": "How did information and mobilisation begin, spread and change?",
+      "preferred_evidence": ["archived original messages", "network analysis", "participant interviews", "platform records"],
+      "alternative_explanations": ["rumour", "copycat behaviour", "organic social networks", "criminal misinformation"]
+    },
+    {
+      "id": "diplomatic_context",
+      "question": "What political dispute, demand or retaliatory motive existed?",
+      "preferred_evidence": ["official statements", "diplomatic chronology", "policy decisions", "negotiation records"],
+      "alternative_explanations": ["unrelated bilateral tension", "domestic politics", "routine bargaining"]
+    },
+    {
+      "id": "timing_and_sequence",
+      "question": "Which relevant actions occurred before, during and after the movement?",
+      "preferred_evidence": ["timestamped records", "contemporaneous reporting", "operational timelines", "archived communications"],
+      "alternative_explanations": ["coincidence", "reporting delay", "post-event narrative construction"]
+    },
+    {
+      "id": "restoration_of_control",
+      "question": "How and when was control restored, and what changed immediately beforehand?",
+      "preferred_evidence": ["deployment changes", "border statistics", "orders", "policy announcements"],
+      "alternative_explanations": ["crowd exhaustion", "weather", "route displacement", "reinforcements"]
+    },
+    {
+      "id": "financial_or_operational_links",
+      "question": "Are material resources linked to state institutions, intermediaries or coercive objectives?",
+      "preferred_evidence": ["payments", "contracts", "asset records", "sanctions evidence", "logistical chains"],
+      "alternative_explanations": ["commercial activity", "corruption", "independent smuggling", "humanitarian support"]
+    },
+    {
+      "id": "humanitarian_and_economic_drivers",
+      "question": "Which war, persecution, poverty, aid, labour or family factors independently explain movement?",
+      "preferred_evidence": ["UN displacement data", "participant accounts", "economic data", "aid records", "country-of-origin conditions"],
+      "alternative_explanations": ["state amplification of genuine need", "mixed voluntary and forced movement"]
+    },
+    {
+      "id": "third_state_contacts",
+      "question": "Is there evidence that another state encouraged, coordinated or directed relevant action?",
+      "preferred_evidence": ["authenticated communications", "meeting records", "financial links", "intelligence later supported by inspectable evidence"],
+      "alternative_explanations": ["routine diplomacy", "aligned interests", "independent action", "public signalling without operational involvement"]
+    }
+  ],
+  "indicators": [
+    {"id": "enforcement-withdrawal", "category_id": "border_enforcement_baseline", "observation": "Units withdraw, barriers open or interception falls markedly below baseline.", "diagnostic_limit": "Shows changed enforcement, not why it changed.", "alternative_explanations": ["overwhelming numbers", "safety concerns", "command confusion"]},
+    {"id": "authenticated-permission-order", "category_id": "command_and_control", "observation": "Authenticated instruction authorises non-intervention or facilitation.", "diagnostic_limit": "Must establish issuer, scope and implementation.", "alternative_explanations": ["limited humanitarian exception", "misinterpreted wording"]},
+    {"id": "state-linked-transport", "category_id": "transport_and_logistics", "observation": "State-linked entities provide organised transport or accommodation towards the border.", "diagnostic_limit": "Transport support does not alone prove coercive intent.", "alternative_explanations": ["commercial services", "evacuation", "ordinary transit"]},
+    {"id": "visa-or-entry-pattern-change", "category_id": "transport_and_logistics", "observation": "Entry or visa practices change in a way that increases access to the target route.", "diagnostic_limit": "Policy change may have non-coercive administrative or economic reasons.", "alternative_explanations": ["tourism policy", "labour demand", "bureaucratic error"]},
+    {"id": "coordinated-origin-messaging", "category_id": "mobilisation_networks", "observation": "Early mobilisation messages share coordinated origins or state-linked amplification.", "diagnostic_limit": "Amplification may exploit rather than create an organic movement.", "alternative_explanations": ["viral copying", "criminal promotion", "diaspora networks"]},
+    {"id": "explicit-political-demand", "category_id": "diplomatic_context", "observation": "A state links border cooperation or migration flows to a political demand.", "diagnostic_limit": "Establishes motive or signalling, not operational conduct.", "alternative_explanations": ["rhetorical bargaining", "domestic audience messaging"]},
+    {"id": "surge-after-dispute", "category_id": "timing_and_sequence", "observation": "A surge follows a significant bilateral dispute or sanction.", "diagnostic_limit": "Sequence does not establish causation.", "alternative_explanations": ["seasonality", "route changes", "independent crisis"]},
+    {"id": "rapid-control-restoration", "category_id": "restoration_of_control", "observation": "Authorities restore control rapidly without a comparable structural change in capacity.", "diagnostic_limit": "May show retained capability, not prior intent.", "alternative_explanations": ["reinforcements", "reduced arrivals", "weather", "route closure"]},
+    {"id": "state-linked-payment", "category_id": "financial_or_operational_links", "observation": "Payments or contracts connect facilitation to a state body or designated intermediary.", "diagnostic_limit": "Purpose and chain of authority must be established.", "alternative_explanations": ["corruption", "commercial contract", "humanitarian expenditure"]},
+    {"id": "sanctioned-facilitator", "category_id": "financial_or_operational_links", "observation": "An institution imposes sanctions on actors for organising or facilitating crossings.", "diagnostic_limit": "Sanctions are an institutional attribution, not a judicial conviction.", "alternative_explanations": ["political response based on undisclosed intelligence"]},
+    {"id": "war-persecution-driver", "category_id": "humanitarian_and_economic_drivers", "observation": "Most participants originate from active conflict or persecution contexts.", "diagnostic_limit": "Genuine protection need can coexist with state exploitation.", "alternative_explanations": ["mixed motives", "onward economic movement"]},
+    {"id": "aid-or-economic-shock", "category_id": "humanitarian_and_economic_drivers", "observation": "Aid cuts, economic collapse or livelihood loss precede onward movement.", "diagnostic_limit": "Explains pressure but not every route choice.", "alternative_explanations": ["family reunion", "seasonality", "smuggling incentives"]},
+    {"id": "authenticated-third-state-contact", "category_id": "third_state_contacts", "observation": "Authenticated contact discusses the relevant border or migration action.", "diagnostic_limit": "Contact must distinguish routine discussion, encouragement and command.", "alternative_explanations": ["routine coordination", "shared situational awareness"]},
+    {"id": "aligned-public-messaging", "category_id": "third_state_contacts", "observation": "Two states use closely aligned messaging around the event.", "diagnostic_limit": "Alignment is weak evidence of operational coordination.", "alternative_explanations": ["shared interests", "copying public statements"]},
+    {"id": "publicly-documented-facilitation", "category_id": "command_and_control", "observation": "Official or parliamentary records describe deliberate facilitation by authorities.", "diagnostic_limit": "The attribution quality depends on disclosed evidence and institutional access.", "alternative_explanations": ["partisan interpretation", "incomplete evidence", "state denial"]}
+  ],
+  "default_sufficiency_profile": {
+    "name": "state-migration-coercion-high-risk-v1",
+    "minimum_independent_streams": 4,
+    "criticality_threshold": 4,
+    "require_primary_for_critical": true,
+    "require_contrary_for_critical": true,
+    "block_on_unsearched_critical": true
+  },
+  "prohibited_inference_jumps": [
+    {"id": "motive_does_not_establish_conduct", "rule": "A political motive or threat must not be treated as evidence that the actor carried out the alleged operation.", "required_bridge_evidence": "Conduct evidence linking the actor to a relevant operational decision."},
+    {"id": "capability_does_not_establish_action", "rule": "The ability to control a border, transport route or intermediary does not establish that the ability was used in the alleged event.", "required_bridge_evidence": "Event-specific records, observations or instructions."},
+    {"id": "sequence_does_not_establish_causation", "rule": "An event occurring after a dispute, sanction or threat does not establish retaliation.", "required_bridge_evidence": "Mechanism evidence connecting the earlier event to the later action."},
+    {"id": "weak_enforcement_does_not_establish_permission", "rule": "Weak or absent enforcement does not by itself establish deliberate permission.", "required_bridge_evidence": "Orders, consistent selective behaviour, retained capability or other evidence distinguishing intent from failure."},
+    {"id": "foreign_hostility_does_not_establish_command", "rule": "Hostility or encouragement by a third state does not establish its operational command.", "required_bridge_evidence": "Authenticated communications, financial links or operational coordination."},
+    {"id": "institutional_attribution_is_not_judicial_proof", "rule": "Government, parliamentary or sanctions attribution must retain its institutional status and disclosed-evidence limits.", "required_bridge_evidence": "Independent corroboration or adjudicated evidence before describing the matter as legally proved."},
+    {"id": "genuine_need_does_not_exclude_exploitation", "rule": "War, persecution or poverty among participants does not rule out later state exploitation.", "required_bridge_evidence": "Separate analysis of participant drivers and state conduct."}
+  ]
+}
