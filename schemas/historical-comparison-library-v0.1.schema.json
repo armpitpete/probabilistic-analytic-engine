@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://merrinworld.uk/schemas/pae/historical-comparison-library-v0.1.json",
+  "title": "PAE historical comparison library v0.1",
+  "type": "object",
+  "required": ["library_version", "domain_id", "title", "method_note", "cases"],
+  "properties": {
+    "library_version": {"const": "0.1"},
+    "domain_id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "method_note": {"type": "string", "minLength": 1},
+    "cases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "period", "actors", "classification", "resolution_status", "public_evidence_quality", "mechanism_summary", "public_evidence_summary", "counterevidence_and_alternatives", "limitations", "relevant_indicators", "analytical_lessons", "sources"]
+      }
+    }
+  }
+}
