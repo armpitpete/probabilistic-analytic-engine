@@ -8,7 +8,7 @@ It is not a black-box truth calculator.
 
 ## Current capabilities
 
-PAE provides evidence acquisition, provenance, hypothesis testing, research control, domain modules, human-reviewed probability calculation, cutoff-controlled historical pilots and resolved-case calibration controls.
+PAE provides evidence acquisition, provenance, hypothesis testing, research control, domain modules, human-reviewed probability calculation, cutoff-controlled historical pilots, resolved-case calibration controls and outcome-blinded human workflow packets.
 
 The first specialist module covers **state migration coercion**.
 
@@ -22,7 +22,7 @@ A different role approves the inputs. The engine produces a hash-locked pending-
 
 The first Belarus–European Union 2021 pilot froze evidence before later outcome records and then scored the frozen result against a predeclared institutional-resolution standard.
 
-PAE-10 expands the method into a frozen eight-case corpus with two cases in each class:
+The calibration programme uses a frozen eight-case corpus with two cases in each class:
 
 - positive institutional attribution;
 - primarily non-coercive mechanism;
@@ -31,7 +31,19 @@ PAE-10 expands the method into a frozen eight-case corpus with two cases in each
 
 The calibration layer validates cutoffs and corpus balance, generates outcome-blinded external-review packets, and reports aggregate Brier, logarithmic, calibration and discrimination measures against a uniform four-class baseline.
 
-Repository checks can validate reviewer declarations. They cannot prove independence. Genuine external review therefore requires real people outside case preparation and calculation.
+## Analyst and external-review workflow
+
+PAE can generate separate outcome-blinded analyst and external-review packets for every frozen case. The packets include pre-cutoff source registries, dependency and contrary-evidence worksheets, blank probability forms and structured reviewer questions.
+
+The assignment register enforces:
+
+- different case preparers and approvers;
+- no external reviewer who prepared or approved the same case;
+- at least two distinct reviewers per case;
+- declared independence, absence of conflict and outcome blinding;
+- explicit incomplete and complete human-workflow states.
+
+No identities, probabilities, signatures or findings are generated automatically. Repository checks validate declarations but cannot prove that an external person is genuinely independent.
 
 ## Governing principles
 
@@ -63,6 +75,8 @@ python -m pae.historical_pilot evidence-cut.json plan.json review.json outcome.j
 python -m pae.calibration validate-manifest calibration/corpus-v0.1.json
 python -m pae.calibration prepare-review calibration/corpus-v0.1.json --output review-packet.json
 python -m pae.calibration aggregate calibration/corpus-v0.1.json results.json --output calibration-report.json
+python -m pae.human_workflow prepare calibration/corpus-v0.1.json --output human-workflow-bundle.json
+python -m pae.human_workflow validate-register calibration/corpus-v0.1.json calibration/assignment-register-v0.1.json --output assignment-status.json
 ```
 
 ## Current boundary
