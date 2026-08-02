@@ -1,0 +1,177 @@
+{
+  "calculation_version": "0.1",
+  "calculation_id": "belarus-eu-2021-cutoff-2021-11-10",
+  "case_snapshot_sha256": "be2a5d9f5f9eaf82b93c61965e078f40119335ab02023b5d631e59fc0616f045",
+  "safety": {
+    "automatic_attribution_enabled": false,
+    "public_conclusion_authorised": false,
+    "live_unresolved_case": false,
+    "calculation_mode": "human_reviewed"
+  },
+  "sufficiency_gate": {
+    "passed": true,
+    "actual_status": "mature",
+    "reason": "The retrospective pilot has five dated public sources, a specific mechanism record, a separate humanitarian observation, explicit alternatives and a frozen cutoff. Mature describes pilot coverage, not truth."
+  },
+  "analyst_authorisation": {
+    "prepared_by": "pae-pilot-analyst-role",
+    "approved_for_calculation_by": "pae-pilot-method-review-role",
+    "decision": "approved_for_calculation",
+    "rationale": "The evidence cut, exclusive primary-mechanism hypotheses, dependency groups and likelihood ranges are sufficiently explicit for a controlled retrospective calculation.",
+    "approved_at": "2026-08-02T13:05:00+01:00"
+  },
+  "exclusive_group": {
+    "id": "primary-mechanism-at-cutoff",
+    "scope": "Primary public explanation for the organised movement through Belarus; individual migrant motives and protection needs may coexist under every hypothesis.",
+    "hypothesis_ids": [
+      "h-organic-primary",
+      "h-state-facilitation-primary",
+      "h-insufficient-public-evidence"
+    ]
+  },
+  "nonexclusive_relationships": [],
+  "hypotheses": [
+    {
+      "id": "h-organic-primary",
+      "label": "Primarily organic movement and non-state facilitation",
+      "prior": {
+        "minimum": 0.22,
+        "base": 0.4,
+        "maximum": 0.58,
+        "provenance": [
+          "The domain comparison library contains organic and forced-displacement comparators.",
+          "High-volume movement can arise from protection needs, route discovery and criminal facilitation without state orchestration."
+        ],
+        "assumptions": [
+          "The prior is a transparent judgement range, not a measured historical frequency.",
+          "Organic primary cause permits individual smugglers and opportunistic local assistance."
+        ]
+      },
+      "evidence_confidence": {
+        "level": "moderate",
+        "reason": "Humanitarian and participant-level motives are directly plausible, but the public record at cutoff contains specific state-facilitation allegations.",
+        "change_conditions": [
+          "Authenticated state orders or transport records become public.",
+          "Independent evidence disproves the reported state-linked mechanisms."
+        ]
+      }
+    },
+    {
+      "id": "h-state-facilitation-primary",
+      "label": "Belarusian state facilitation as the primary organised mechanism",
+      "prior": {
+        "minimum": 0.18,
+        "base": 0.35,
+        "maximum": 0.55,
+        "provenance": [
+          "The domain library contains institutionally attributed cases with transport, entry-policy and border-enforcement mechanisms.",
+          "The pre-cutoff dispute and policy sequence make deliberate facilitation plausible but do not establish it."
+        ],
+        "assumptions": [
+          "State facilitation does not erase migrant agency or protection needs.",
+          "Political motive is not counted as operational conduct without bridge evidence."
+        ]
+      },
+      "evidence_confidence": {
+        "level": "moderate",
+        "reason": "Several official sources describe specific mechanisms, but underlying records and command evidence are incomplete.",
+        "change_conditions": [
+          "Named facilitating entities or authenticated operational instructions are published.",
+          "Independent records show the travel and escort claims were materially incorrect."
+        ]
+      }
+    },
+    {
+      "id": "h-insufficient-public-evidence",
+      "label": "Public evidence insufficient for primary attribution",
+      "prior": {
+        "minimum": 0.1,
+        "base": 0.25,
+        "maximum": 0.42,
+        "provenance": [
+          "The public record relies heavily on official institutional statements from involved actors.",
+          "The command chain and much underlying operational evidence are not disclosed."
+        ],
+        "assumptions": [
+          "Insufficient information is a substantive analytical outcome.",
+          "A later institutional decision is not available at the evidence cutoff."
+        ]
+      },
+      "evidence_confidence": {
+        "level": "high",
+        "reason": "The limits of the public evidence and source dependence are directly inspectable.",
+        "change_conditions": [
+          "Later outcome records identify concrete actors and mechanisms.",
+          "Independent operational evidence becomes available."
+        ]
+      }
+    }
+  ],
+  "evidence_updates": [
+    {
+      "id": "update-july-eu-attribution",
+      "independence_group": "eu-political-attribution",
+      "weight": 0.25,
+      "assigned_by": "pae-pilot-analyst-role",
+      "rationale": "The declaration raises the state-facilitation hypothesis but is a political attribution with limited disclosed evidence.",
+      "provenance": ["src-eu-2021-07-30"],
+      "multipliers": {
+        "h-organic-primary": {"minimum": 0.75, "base": 0.9, "maximum": 1.1},
+        "h-state-facilitation-primary": {"minimum": 1.15, "base": 1.35, "maximum": 1.75},
+        "h-insufficient-public-evidence": {"minimum": 0.95, "base": 1.1, "maximum": 1.3}
+      }
+    },
+    {
+      "id": "update-october-european-council",
+      "independence_group": "eu-political-attribution",
+      "weight": 0.25,
+      "assigned_by": "pae-pilot-analyst-role",
+      "rationale": "The later collective assessment adds some weight but shares the same EU political-attribution stream and is discounted accordingly.",
+      "provenance": ["src-european-council-2021-10-22"],
+      "multipliers": {
+        "h-organic-primary": {"minimum": 0.7, "base": 0.88, "maximum": 1.1},
+        "h-state-facilitation-primary": {"minimum": 1.2, "base": 1.45, "maximum": 1.9},
+        "h-insufficient-public-evidence": {"minimum": 0.9, "base": 1.05, "maximum": 1.3}
+      }
+    },
+    {
+      "id": "update-specific-travel-mechanism",
+      "independence_group": "council-specific-mechanism",
+      "weight": 0.7,
+      "assigned_by": "pae-pilot-analyst-role",
+      "rationale": "The statement identifies organised flights and internal travel, a mechanism more expected under state facilitation than a primarily organic account, while undisclosed underlying records limit the maximum weight.",
+      "provenance": ["src-council-2021-11-09"],
+      "multipliers": {
+        "h-organic-primary": {"minimum": 0.35, "base": 0.58, "maximum": 0.85},
+        "h-state-facilitation-primary": {"minimum": 1.8, "base": 2.7, "maximum": 4.5},
+        "h-insufficient-public-evidence": {"minimum": 0.7, "base": 0.95, "maximum": 1.25}
+      }
+    },
+    {
+      "id": "update-humanitarian-observation",
+      "independence_group": "un-humanitarian-observation",
+      "weight": 0.7,
+      "assigned_by": "pae-pilot-analyst-role",
+      "rationale": "The UN agencies independently confirm a large vulnerable group, protection needs and concerns about instrumentalisation; the observation supports mixed human motives and does not independently establish command.",
+      "provenance": ["src-unhcr-iom-2021-11-09"],
+      "multipliers": {
+        "h-organic-primary": {"minimum": 0.95, "base": 1.15, "maximum": 1.4},
+        "h-state-facilitation-primary": {"minimum": 1.0, "base": 1.2, "maximum": 1.5},
+        "h-insufficient-public-evidence": {"minimum": 0.9, "base": 1.05, "maximum": 1.3}
+      }
+    },
+    {
+      "id": "update-armed-escort-observation",
+      "independence_group": "border-operational-observation",
+      "weight": 0.8,
+      "assigned_by": "pae-pilot-analyst-role",
+      "rationale": "Reported armed escort towards the border is strongly more expected under deliberate state facilitation, but the public statement does not disclose the complete observation and authentication chain.",
+      "provenance": ["src-eu-2021-11-10"],
+      "multipliers": {
+        "h-organic-primary": {"minimum": 0.25, "base": 0.48, "maximum": 0.8},
+        "h-state-facilitation-primary": {"minimum": 2.0, "base": 3.5, "maximum": 6.0},
+        "h-insufficient-public-evidence": {"minimum": 0.6, "base": 0.9, "maximum": 1.35}
+      }
+    }
+  ]
+}
