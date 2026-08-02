@@ -1,0 +1,24 @@
+{
+  "workflow_version": "0.1",
+  "programme_id": "pae-resolved-case-calibration-v0.1",
+  "analyst_assignments": [
+    {"case_id": "belarus-eu-borders-2021", "prepared_by": null, "approved_by": null, "status": "unassigned"},
+    {"case_id": "morocco-ceuta-2021", "prepared_by": null, "approved_by": null, "status": "unassigned"},
+    {"case_id": "ukraine-forced-displacement-2022", "prepared_by": null, "approved_by": null, "status": "unassigned"},
+    {"case_id": "mediterranean-movement-2015", "prepared_by": null, "approved_by": null, "status": "unassigned"},
+    {"case_id": "turkey-greece-border-2020", "prepared_by": null, "approved_by": null, "status": "unassigned"},
+    {"case_id": "russia-norway-storskog-2015", "prepared_by": null, "approved_by": null, "status": "unassigned"},
+    {"case_id": "finland-russia-eastern-border-2023", "prepared_by": null, "approved_by": null, "status": "unassigned"},
+    {"case_id": "libya-europe-migration-threat-2011", "prepared_by": null, "approved_by": null, "status": "unassigned"}
+  ],
+  "reviewer_assignments": [
+    {"case_id": "belarus-eu-borders-2021", "reviewers": [], "status": "unassigned"},
+    {"case_id": "morocco-ceuta-2021", "reviewers": [], "status": "unassigned"},
+    {"case_id": "ukraine-forced-displacement-2022", "reviewers": [], "status": "unassigned"},
+    {"case_id": "mediterranean-movement-2015", "reviewers": [], "status": "unassigned"},
+    {"case_id": "turkey-greece-border-2020", "reviewers": [], "status": "unassigned"},
+    {"case_id": "russia-norway-storskog-2015", "reviewers": [], "status": "unassigned"},
+    {"case_id": "finland-russia-eastern-border-2023", "reviewers": [], "status": "unassigned"},
+    {"case_id": "libya-europe-migration-threat-2011", "reviewers": [], "status": "unassigned"}
+  ]
+}

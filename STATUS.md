@@ -1,6 +1,6 @@
 ---
 completion_authority: true
-status: PAE_10_EXTERNAL_REVIEW_GATE
+status: PAE_11_PACKET_MOBILISATION_IN_PROGRESS
 ---
 
 # Probabilistic Analytic Engine — Current Status
@@ -8,56 +8,47 @@ status: PAE_10_EXTERNAL_REVIEW_GATE
 ## Authority
 
 - Repository: `armpitpete/probabilistic-analytic-engine`
-- Accepted calculation-and-pilot programme: `a0a877066ea615ec17d5e9a1c431bd06447905f3`
-- Active issue: #19 — PAE-10
-- Active branch: `calibration/pae-10-resolved-case-programme`
-- Candidate package version: `0.8.0`
+- Accepted PAE-10 infrastructure: `4030ef0b70747a4684be6708da0c10dbfaf81d9e`
+- Parent calibration programme: Issue #19
+- Active bounded unit: Issue #21 — PAE-11
+- Active branch: `workflow/pae-11-human-packets`
+- Candidate package version: `0.9.0`
 
-## Completed repository work
+## Accepted calibration infrastructure
 
-PAE-10 now contains:
+PAE contains a frozen eight-case corpus with exactly two positive, two negative, two disputed and two insufficient-public-information outcomes, plus fixed pass, correction and stop criteria, leakage controls, aggregate scoring and external-review schemas.
 
-- a frozen eight-case corpus;
-- exactly two positive, two negative, two disputed and two insufficient-public-information outcomes;
-- predeclared evidence cutoffs, resolution standards and withheld outcome sources;
-- fixed pass, correction and stop criteria;
-- corpus-balance and hindsight-leakage validation;
-- outcome-blinded external-review packet generation;
-- external-review independence, conflict and role-separation controls;
-- aggregate multiclass Brier and logarithmic scoring;
-- uniform-baseline comparisons;
-- top-one accuracy, expected calibration error and one-versus-rest discrimination;
-- outcome-class coverage and leave-one-case-out reporting;
-- machine-readable review and result schemas;
-- nineteen focused regression tests.
+## Current bounded unit
 
-## Frozen outcome classes
+PAE-11 turns that infrastructure into a usable human workflow by providing:
 
-| Outcome class | Cases |
-|---|---:|
-| Positive institutional attribution | 2 |
-| Primarily non-coercive mechanism | 2 |
-| Disputed public attribution | 2 |
-| Insufficient public information | 2 |
+- one outcome-blinded analyst packet per frozen case;
+- one outcome-blinded external-review packet per frozen case;
+- blank probability forms with no suggested values;
+- source-authority and dependency worksheets;
+- contrary-evidence and negative-search records;
+- analyst preparation and approval roles;
+- a blank assignment register covering all eight cases;
+- reviewer independence, conflict and outcome-blinding declarations;
+- an external-review invitation template;
+- assignment-register validation;
+- role-overlap and duplicate-reviewer rejection;
+- a complete-workflow gate requiring two reviewers per case;
+- deterministic tests and command-line validation.
 
-`Insufficient` describes what the public record can establish under the declared question. It does not assert that hidden conduct did not occur.
+## Human gate preserved
 
-## Acceptance logic
+The workflow intentionally contains no invented:
 
-A result can become a `pass_candidate` only if it beats the uniform four-class baseline by the frozen Brier and logarithmic margins, reaches the top-one and calibration thresholds, records at least one correct leading classification in every outcome class and contains no major, critical or rejected external review.
+- analysts;
+- probability assignments;
+- approvers;
+- external reviewers;
+- affiliations or expertise;
+- signatures;
+- findings.
 
-A pass candidate never authorises live use automatically.
-
-## Current human gate
-
-The repository can validate, blind and score the programme, but it cannot fabricate:
-
-- human probability assignments for the seven additional case packets;
-- two genuine independent external reviewers for every case;
-- reviewer identity, expertise, conflict declarations or signatures;
-- external review findings.
-
-Independent external review must be performed by real people who did not prepare the cases or calculations and did not see the outcome labels before signing their blinded reviews.
+A blank register is valid but incomplete. A completed register still does not authorise live use.
 
 ## Safety boundary
 
@@ -70,6 +61,15 @@ PAE remains unauthorised for:
 - public conclusions;
 - publication, user interface or deployment.
 
-## Current protected gate
+## Acceptance gate
 
-Complete Python 3.12 CI for the calibration infrastructure and frozen corpus. After merge, Issue #19 must remain open at the external-human-input gate until genuine case assignments and reviews are returned.
+Require:
+
+- all 102 accepted tests remain green;
+- all new human-workflow tests pass;
+- outcome fields remain absent from generated packets;
+- no probability suggestions appear;
+- blank assignment-register validation succeeds as incomplete;
+- invalid role overlap, conflicts and inadequate reviewer counts fail visibly;
+- Python 3.12 produces the workflow bundle and register-status outputs;
+- one exact pull-request head is returned for protected review.

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://merrinworld.uk/schemas/pae/human-assignment-register-v0.1.json",
+  "title": "PAE human assignment register v0.1",
+  "type": "object",
+  "required": [
+    "workflow_version",
+    "programme_id",
+    "analyst_assignments",
+    "reviewer_assignments"
+  ],
+  "properties": {
+    "workflow_version": {"const": "0.1"},
+    "programme_id": {"type": "string", "minLength": 1},
+    "analyst_assignments": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["case_id", "prepared_by", "approved_by", "status"],
+        "properties": {
+          "case_id": {"type": "string", "minLength": 1},
+          "prepared_by": {"type": ["string", "null"]},
+          "approved_by": {"type": ["string", "null"]},
+          "status": {"enum": ["unassigned", "assigned", "inputs_frozen"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "reviewer_assignments": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["case_id", "reviewers", "status"],
+        "properties": {
+          "case_id": {"type": "string", "minLength": 1},
+          "status": {"enum": ["unassigned", "assigned", "reviews_returned"]},
+          "reviewers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "reviewer_id",
+                "affiliation",
+                "expertise",
+                "independent",
+                "conflict_of_interest",
+                "outcome_blinded"
+              ],
+              "properties": {
+                "reviewer_id": {"type": "string", "minLength": 1},
+                "affiliation": {"type": "string", "minLength": 1},
+                "expertise": {"type": "string", "minLength": 1},
+                "independent": {"const": true},
+                "conflict_of_interest": {"const": false},
+                "outcome_blinded": {"const": true}
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
