@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "probabilistic-analytic-engine"
-version = "0.5.0"
-description = "Auditable evidence, domain comparison and probability safety contracts"
+version = "0.6.0"
+description = "Auditable evidence, human-reviewed probability calculation and domain analysis"
 requires-python = ">=3.12"
 dependencies = []
 
@@ -16,6 +16,7 @@ dev = ["pytest>=8.3"]
 pae-assess = "pae.cli:main"
 pae-domain = "pae.domains:main"
 pae-probability-contract = "pae.probability_contract:main"
+pae-calculate = "pae.calculation:main"
 
 [tool.setuptools]
 packages = ["pae"]
