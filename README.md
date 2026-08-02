@@ -6,9 +6,9 @@ It is not a black-box truth calculator.
 
 > Collect until the important hypotheses have been fairly tested—not until the folder is large.
 
-## Current capabilities
+## Foundation capabilities
 
-PAE provides:
+PAE now provides:
 
 - evidence-requirement coverage maps;
 - explicit source independence and typed dependency relationships;
@@ -26,9 +26,27 @@ PAE provides:
 - configurable sufficiency profiles;
 - Value-of-Information research ranking;
 - reusable domain modules;
-- sourced historical comparison libraries.
+- sourced historical comparison libraries;
+- a Probability Engine v0.1 contract and safety validator.
 
 The first specialist module covers **state migration coercion**. It contains ten evidence categories, fifteen indicators, explicit inference guards and six differently classified comparison cases, including non-coercive and organic comparators.
+
+## Probability contract
+
+The contract validates:
+
+- prior ranges, provenance and assumptions;
+- exclusive versus nested or overlapping hypotheses;
+- likelihood-strength bands;
+- correlated-evidence controls;
+- mandatory sufficiency gates;
+- evidence-confidence separation;
+- sensitivity plans;
+- immutable forecast revisions;
+- Brier, logarithmic and calibration scoring rules;
+- update triggers.
+
+It performs no probability calculation.
 
 ## Governing principles
 
@@ -38,9 +56,10 @@ The first specialist module covers **state migration coercion**. It contains ten
 - Search failure is not evidence of absence.
 - Institutional attribution is not judicial proof.
 - Historical similarity is not a probability calculation.
+- Nested or overlapping hypotheses are not summed as exclusive.
+- A failed sufficiency gate forbids probability updates.
 - Motive, means and opportunity do not establish conduct, coordination or command.
 - Alternative explanations and contrary evidence must be actively sought.
-- Overlapping and mixed causes must be represented where appropriate.
 - Unknown and insufficient information are valid outcomes.
 - Collection, analysis, public wording and publication authority remain separate.
 
@@ -58,11 +77,17 @@ Validate a domain module and historical library:
 python -m pae.domains path/to/module.json path/to/historical-cases.json
 ```
 
-Both commands support `--output path/to/result.json`.
+Validate a probability contract:
+
+```text
+python -m pae.probability_contract path/to/probability-contract.json
+```
+
+All commands support `--output path/to/result.json`.
 
 ## Current boundary
 
-PAE does not yet calculate attribution probabilities. The remaining bounded unit is the Probability Engine v0.1 contract and validator. Automatic attribution will remain disabled.
+Automatic probability updating, attribution and public conclusions remain disabled. Enabling them requires a separately authorised implementation and acceptance programme.
 
 ## Donor systems
 

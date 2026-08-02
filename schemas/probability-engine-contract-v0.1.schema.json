@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://merrinworld.uk/schemas/pae/probability-engine-contract-v0.1.json",
+  "title": "PAE Probability Engine contract v0.1",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "assessment_id",
+    "case_snapshot_sha256",
+    "domain_id",
+    "safety",
+    "sufficiency_gate",
+    "hypotheses",
+    "nonexclusive_relationships",
+    "exclusive_groups",
+    "likelihood_scale",
+    "dependency_policy",
+    "sensitivity_plan",
+    "scoring_contract",
+    "forecast_ledger",
+    "update_triggers"
+  ],
+  "properties": {
+    "contract_version": {"const": "0.1"},
+    "assessment_id": {"type": "string", "minLength": 1},
+    "case_snapshot_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "domain_id": {"type": "string", "minLength": 1},
+    "safety": {
+      "type": "object",
+      "required": ["automatic_attribution_enabled", "public_conclusion_authorised", "calculation_mode"],
+      "properties": {
+        "automatic_attribution_enabled": {"const": false},
+        "public_conclusion_authorised": {"const": false},
+        "calculation_mode": {"const": "validator_only"}
+      }
+    },
+    "sufficiency_gate": {
+      "type": "object",
+      "required": ["required_statuses", "actual_status", "passed", "probability_updates_allowed", "reason"]
+    },
+    "hypotheses": {"type": "array", "minItems": 2},
+    "nonexclusive_relationships": {"type": "array"},
+    "exclusive_groups": {"type": "array", "minItems": 1},
+    "likelihood_scale": {"type": "array", "minItems": 1},
+    "dependency_policy": {"type": "object"},
+    "sensitivity_plan": {"type": "object"},
+    "scoring_contract": {"type": "object"},
+    "forecast_ledger": {"type": "array", "minItems": 1},
+    "update_triggers": {"type": "array", "minItems": 1}
+  }
+}
