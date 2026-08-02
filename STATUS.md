@@ -1,6 +1,6 @@
 ---
 completion_authority: true
-status: REVIEWER_INTAKE_IMPLEMENTATION_IN_PROGRESS
+status: REVIEWER_REPLIES_AWAITED
 ---
 
 # Probabilistic Analytic Engine — Current Status
@@ -11,31 +11,48 @@ status: REVIEWER_INTAKE_IMPLEMENTATION_IN_PROGRESS
 - Accepted calibration infrastructure: `4030ef0b70747a4684be6708da0c10dbfaf81d9e`
 - Accepted analyst and external-review workflow: `b7077ea6c5d750899df62ed689e98ced4fb31103`
 - Accepted outreach and recruitment record: `a747b62ec0bf32b4a93e9eb9978748b9273b5193`
+- Accepted reviewer intake and packet handoff: `b0d46d65900ef312f584de7eaffa87e2b6c938c9`
 - Parent calibration programme: Issue #19 — open
-- Active bounded unit: Issue #27 — PAE-14
-- Active branch: `workflow/pae-14-reviewer-intake`
-- Candidate package version: `0.10.0`
+- Package version: `0.10.0`
 
-## Outreach state
+## Current state
 
-First-wave institutional requests were sent on 2 August 2026 to migration-domain, reproducibility, statistical and research-integrity channels. No reviewer has been appointed, no case packet has been released and no payment or contractual commitment has been made.
+First-wave institutional requests were sent on 2 August 2026 to migration-domain, reproducibility, statistical and research-integrity channels.
 
-## Current bounded unit
-
-PAE-14 prepares the response-intake and packet-handoff path by adding:
+The repository is ready to process genuine replies through:
 
 - reviewer-candidate intake records;
-- explicit expertise and proposed-role fields;
-- independence, conflict, source-authorship and outcome-exposure declarations;
+- expertise and proposed-role validation;
+- independence, conflict, source-authorship, advisory and outcome-exposure checks;
 - eligible, needs-clarification, unsuitable and withdrawn states;
-- refusal of packet release before the eligibility gate passes;
-- case-specific exclusion controls;
-- an authenticated packet-release checklist;
-- delivery and return-record requirements;
-- reply, clarification, follow-up and decline templates;
-- a machine-readable schema, command-line validator and deterministic tests.
+- case-specific exclusions;
+- outcome-blinded packet-release checks;
+- checksum, delivery and authenticated-return records;
+- clarification, follow-up and decline templates.
 
-Institutional affiliation, prestige or agreement with PAE cannot substitute for individual screening.
+No reviewer has been appointed. No case packet or outcome material has been released. No payment, contract or confidentiality agreement has been offered.
+
+## Validation
+
+PAE-14 passed on Python 3.12 with:
+
+- editable package installation;
+- bytecode compilation;
+- 136 deterministic tests;
+- every accepted assessment, domain, contract, calculation, pilot, calibration and human-workflow command;
+- reviewer-candidate validation;
+- case-specific packet-release validation;
+- all generated-output checks.
+
+## Next action when a reply arrives
+
+1. Verify the sender and contact route.
+2. Record affiliation, expertise and proposed role.
+3. Complete independence, conflict and prior-exposure declarations.
+4. Classify the candidate as eligible, needs clarification, unsuitable or withdrawn.
+5. Check case-specific exclusions.
+6. Release no full packet until every gate passes.
+7. Record the exact outcome-blinded packet checksum and delivery evidence.
 
 ## Human evidence still required
 
@@ -54,6 +71,7 @@ Issue #19 cannot be completed until real people provide:
 PAE remains unauthorised for:
 
 - releasing a packet to an unscreened person;
+- revealing outcome material before the review is frozen;
 - live unresolved cases;
 - automatic evidence collection;
 - model-generated priors or likelihood assignments;
@@ -61,15 +79,4 @@ PAE remains unauthorised for:
 - public conclusions;
 - publication, user interface or deployment.
 
-## Acceptance gate
-
-Require:
-
-- all 118 accepted tests remain green;
-- reviewer intake and release tests pass;
-- hard conflicts and outcome exposure block release;
-- source authorship requires case-specific clarification;
-- institutional affiliation cannot replace concrete expertise;
-- case exclusions block only the affected case;
-- Python 3.12 produces candidate and packet-release records;
-- one exact pull-request head is returned for protected review.
+A successful intake or calibration pass candidate does not automatically authorise live use.
