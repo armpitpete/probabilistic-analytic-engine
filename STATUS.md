@@ -1,6 +1,6 @@
 ---
 completion_authority: true
-status: FOUNDATION_COMPLETE
+status: PAE_07_IN_PROGRESS
 ---
 
 # Probabilistic Analytic Engine — Current Status
@@ -8,85 +8,52 @@ status: FOUNDATION_COMPLETE
 ## Authority
 
 - Repository: `armpitpete/probabilistic-analytic-engine`
-- Completed foundation `main`: `4b2f8e239803b2a0aea407d08233e30912c90505`
-- Completion record: Issue #11 / branch `foundation/pae-06-completion-record`
-- Package version: `0.5.0`
+- Accepted foundation gate: `299743af54470b7035923fe372435aecbfc94786`
+- Active issue: #13 — PAE-07
+- Active branch: `calculation/pae-07-human-reviewed-engine`
+- Candidate package version: `0.6.0`
 
-## Foundation completion
+## Completed foundation
 
-All twenty accepted foundation actions are implemented and merged.
+The accepted foundation contains evidence acquisition, provenance, hypothesis structure, research control, the state-migration-coercion domain module, a sourced comparison library and the Probability Engine v0.1 safety contract.
 
-### Evidence acquisition
+## Current bounded unit
 
-- evidence-requirement coverage maps;
-- source-dependency graph and independence handling;
-- critical information gaps;
-- ranked next-search queue;
-- information-sufficiency status.
+PAE-07 implements a human-reviewed calculation engine that:
 
-### Provenance and hypotheses
-
-- complete source provenance and content checksums;
-- claim-specific source authority;
-- proposition-level evidence records;
-- immutable case snapshots;
-- hypothesis registry, relationships and completeness checks;
-- mixed-cause, ordinary-explanation and insufficient-information requirements;
-- predictions and disconfirmers.
-
-### Research control
-
-- typed source-dependency relationships;
-- coverage by hypothesis;
-- search diary and negative-evidence records;
-- separation of evidence of absence from search failure;
-- configurable sufficiency profiles;
-- improved Value-of-Information ranking.
-
-### Domain foundation
-
-- reusable domain-module interface;
-- state-migration-coercion specialist module;
-- ten evidence categories and fifteen indicators;
-- explicit prohibited inference jumps;
-- sourced six-case historical comparison library containing attributed, contested, unresolved, organic and non-coercive comparators.
-
-### Probability contract
-
-- prior ranges, provenance and assumptions;
-- exclusive and non-exclusive hypothesis controls;
-- likelihood-strength bands;
-- correlated-evidence and double-counting rules;
-- mandatory sufficiency gates;
-- probability and evidence-confidence separation;
-- sensitivity plans;
-- immutable hash-linked forecast revisions;
-- Brier, logarithmic and calibration scoring contracts;
-- update triggers and audit requirements.
-
-## Validation
-
-The accepted PAE-05 candidate passed on Python 3.12 with:
-
-- package installation;
-- bytecode compilation;
-- 54 deterministic tests;
-- legacy v0.1 assessment;
-- strict v0.2 assessment;
-- research-control v0.3 assessment;
-- state-migration-coercion domain and library validation;
-- Probability Engine v0.1 contract validation.
+- accepts only an explicitly exclusive hypothesis group;
+- requires human-declared priors, likelihood ranges, provenance and assumptions;
+- requires a passed mature or resolved information-sufficiency gate;
+- applies declared correlation weights without allowing one independence group to exceed one unit of total weight;
+- normalises base posterior estimates;
+- reports conservative sensitivity bounds and leave-one-stream-out results;
+- creates an immutable draft hash;
+- requires a reviewer other than the calculation preparer to accept or reject the exact draft.
 
 ## Safety boundary
 
-The Probability Engine remains a contract validator only. It requires:
+PAE-07 rejects:
 
-- `automatic_attribution_enabled: false`;
-- `public_conclusion_authorised: false`;
-- `calculation_mode: validator_only`.
+- live unresolved cases;
+- automatic attribution;
+- public-conclusion authority;
+- model-generated evidence weights;
+- overlapping or nested hypotheses in one exclusive group;
+- failed sufficiency gates;
+- same-person preparation and review;
+- tampered drafts.
 
-The repository does not yet perform Bayesian updates, calculate live attribution probabilities, collect live evidence automatically, publish conclusions or deploy a service.
+No historical pilot, public conclusion, automated collection, publication, user interface or deployment is included in PAE-07.
 
-## Next authority gate
+## Acceptance gate
 
-The foundation is complete. Any implementation of live probability calculation, automated evidence collection, user interface, publication integration or deployment requires a new bounded issue and acceptance programme.
+Require:
+
+- all 54 accepted foundation tests remain green;
+- the new focused calculation tests pass;
+- the command-line calculation fixture succeeds on Python 3.12;
+- generated probabilities total one;
+- sensitivity bounds contain the base point estimates;
+- dependency overweighting and unsafe modes fail visibly;
+- independent review is tied to the exact draft hash;
+- one exact pull-request head is returned for protected review.
