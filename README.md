@@ -8,7 +8,7 @@ It is not a black-box truth calculator.
 
 ## Current capabilities
 
-PAE provides evidence acquisition, provenance, hypothesis testing, research-control, domain modules, human-reviewed probability calculation and cutoff-controlled historical pilots.
+PAE provides evidence acquisition, provenance, hypothesis testing, research control, domain modules, human-reviewed probability calculation, cutoff-controlled historical pilots and resolved-case calibration controls.
 
 The first specialist module covers **state migration coercion**.
 
@@ -18,11 +18,20 @@ The calculation engine does not generate priors or likelihood assignments. Human
 
 A different role approves the inputs. The engine produces a hash-locked pending-review draft with normalised estimates, sensitivity bounds and leave-one-stream-out results. A separate review role must accept the exact draft before a historical pilot can run.
 
-## First historical pilot
+## Historical pilots and calibration
 
-The Belarus–European Union 2021 pilot freezes evidence at **10 November 2021**, calculates without later outcome records, then scores the frozen result against a predeclared later institutional-resolution standard.
+The first Belarus–European Union 2021 pilot froze evidence before later outcome records and then scored the frozen result against a predeclared institutional-resolution standard.
 
-The pilot correctly kept state facilitation as the leading hypothesis after removing every individual evidence stream. It remains only one retrospective test. It is not calibration evidence, judicial proof or independent external human validation.
+PAE-10 expands the method into a frozen eight-case corpus with two cases in each class:
+
+- positive institutional attribution;
+- primarily non-coercive mechanism;
+- disputed public attribution;
+- insufficient public information.
+
+The calibration layer validates cutoffs and corpus balance, generates outcome-blinded external-review packets, and reports aggregate Brier, logarithmic, calibration and discrimination measures against a uniform four-class baseline.
+
+Repository checks can validate reviewer declarations. They cannot prove independence. Genuine external review therefore requires real people outside case preparation and calculation.
 
 ## Governing principles
 
@@ -36,9 +45,9 @@ The pilot correctly kept state facilitation as the leading hypothesis after remo
 - A failed sufficiency gate forbids probability calculation.
 - Human analysts own priors and likelihood assignments.
 - Calculation drafts require role-separated review.
+- Outcome labels and post-cutoff records must remain hidden during external review.
 - One retrospective success does not establish calibration.
-- Motive, means and opportunity do not establish conduct, coordination or command.
-- Alternative explanations and contrary evidence must be actively sought.
+- A calibration pass candidate never automatically authorises live use.
 - Unknown and insufficient information are valid outcomes.
 - Collection, analysis, public wording and publication authority remain separate.
 
@@ -51,11 +60,16 @@ python -m pae.probability_contract probability-contract.json
 python -m pae.calculation calculate plan.json --output draft.json
 python -m pae.calculation review draft.json review.json --output review-record.json
 python -m pae.historical_pilot evidence-cut.json plan.json review.json outcome.json --output pilot-result.json
+python -m pae.calibration validate-manifest calibration/corpus-v0.1.json
+python -m pae.calibration prepare-review calibration/corpus-v0.1.json --output review-packet.json
+python -m pae.calibration aggregate calibration/corpus-v0.1.json results.json --output calibration-report.json
 ```
 
 ## Current boundary
 
 Live unresolved cases, automatic evidence collection, model-generated priors or likelihood assignments, automatic attribution, public conclusions, publication and deployment remain prohibited.
+
+Aggregate calibration is not complete until human probability assignments and genuine signed external reviews have been returned for the frozen corpus.
 
 ## Donor systems
 
