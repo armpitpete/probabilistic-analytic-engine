@@ -1,4 +1,4 @@
-name: Validate PAE foundation
+name: Validate PAE
 
 on:
   pull_request:
@@ -20,5 +20,7 @@ jobs:
       - run: python -m pip install -e ".[dev]"
       - run: python -m compileall -q pae tests
       - run: pytest
-      - run: python -m pae fixtures/ceuta-2026-method-fixture.json --output generated/ceuta-2026-method-assessment.json
-      - run: test -s generated/ceuta-2026-method-assessment.json
+      - run: python -m pae fixtures/ceuta-2026-method-fixture.json --output generated/ceuta-v0.1-assessment.json
+      - run: python -m pae fixtures/ceuta-2026-method-fixture-v0.2.json --output generated/ceuta-v0.2-assessment.json
+      - run: test -s generated/ceuta-v0.1-assessment.json
+      - run: test -s generated/ceuta-v0.2-assessment.json
