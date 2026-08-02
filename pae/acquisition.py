@@ -386,16 +386,25 @@ def rank_research_options(
 def information_sufficiency_status(
     coverage: list[RequirementCoverage],
     sources: dict[str, dict[str, Any]],
+    evidence_items: dict[str, dict[str, Any]],
 ) -> dict[str, Any]:
     critical = [item for item in coverage if item.criticality >= 4]
     critical_missing = [item for item in critical if item.status == "missing"]
     critical_not_covered = [item for item in critical if item.status != "covered"]
     covered = [item for item in coverage if item.status == "covered"]
-    independent_streams = len({source["independence_group"] for source in sources.values()})
+    used_source_ids = {
+        source_id
+        for item in evidence_items.values()
+        for source_id in item["source_ids"]
+    }
+    used_sources = [sources[source_id] for source_id in sorted(used_source_ids)]
+    independent_streams = len(
+        {source["independence_group"] for source in used_sources}
+    )
     primary_streams = len(
         {
             source["independence_group"]
-            for source in sources.values()
+            for source in used_sources
             if source["source_class"] == "primary"
         }
     )
@@ -430,6 +439,8 @@ def information_sufficiency_status(
         "critical_requirements_covered": len(critical) - len(critical_not_covered),
         "independent_source_streams": independent_streams,
         "primary_source_streams": primary_streams,
+        "registered_sources": len(sources),
+        "evidence_linked_sources": len(used_source_ids),
         "warning": (
             "Information sufficiency measures research coverage. It does not establish that any "
             "hypothesis is true and does not authorise probability or attribution claims."
@@ -455,6 +466,6 @@ def assess_case(case: Any) -> dict[str, Any]:
             indexes["research_options"], indexes["requirements"], coverage
         ),
         "information_sufficiency": information_sufficiency_status(
-            coverage, indexes["sources"]
+            coverage, indexes["sources"], indexes["evidence_items"]
         ),
     }
