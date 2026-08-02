@@ -45,6 +45,25 @@ def test_value_of_information_prioritises_critical_discriminating_search() -> No
     assert queue[0]["components"]["gap_bonus"] > 0
 
 
+def test_unused_registered_source_does_not_inflate_sufficiency() -> None:
+    case = load_case()
+    case["sources"].append(
+        {
+            "id": "source-unused-c",
+            "title": "Unused artificial source C",
+            "source_class": "fixture",
+            "independence_group": "fixture-unused-origin-c",
+            "derived_from": [],
+        }
+    )
+    result = assess_case(case)
+    sufficiency = result["information_sufficiency"]
+    assert sufficiency["registered_sources"] == 4
+    assert sufficiency["evidence_linked_sources"] == 3
+    assert sufficiency["independent_source_streams"] == 2
+    assert sufficiency["status"] == "insufficient"
+
+
 def test_duplicate_ids_are_rejected() -> None:
     case = load_case()
     case["hypotheses"].append(copy.deepcopy(case["hypotheses"][0]))
