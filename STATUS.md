@@ -1,6 +1,6 @@
 ---
 completion_authority: true
-status: CALCULATION_PILOT_PROGRAMME_COMPLETE
+status: PAE_10_EXTERNAL_REVIEW_GATE
 ---
 
 # Probabilistic Analytic Engine — Current Status
@@ -8,63 +8,60 @@ status: CALCULATION_PILOT_PROGRAMME_COMPLETE
 ## Authority
 
 - Repository: `armpitpete/probabilistic-analytic-engine`
-- Accepted foundation gate: `299743af54470b7035923fe372435aecbfc94786`
-- Accepted human-reviewed calculation engine: `80f5dc738658a37a570524945b5328e5e602f7ed`
-- Accepted first historical pilot: `e6856b6a6141e3a131764d4eaa48bf4c04f3480f`
-- Package version: `0.7.0`
+- Accepted calculation-and-pilot programme: `a0a877066ea615ec17d5e9a1c431bd06447905f3`
+- Active issue: #19 — PAE-10
+- Active branch: `calibration/pae-10-resolved-case-programme`
+- Candidate package version: `0.8.0`
 
-## Programme completion
+## Completed repository work
 
-The authorised next programme is complete:
+PAE-10 now contains:
 
-1. a human-reviewed calculation engine was implemented and accepted;
-2. the engine was tested through a cutoff-controlled resolved historical pilot before any live unresolved use.
+- a frozen eight-case corpus;
+- exactly two positive, two negative, two disputed and two insufficient-public-information outcomes;
+- predeclared evidence cutoffs, resolution standards and withheld outcome sources;
+- fixed pass, correction and stop criteria;
+- corpus-balance and hindsight-leakage validation;
+- outcome-blinded external-review packet generation;
+- external-review independence, conflict and role-separation controls;
+- aggregate multiclass Brier and logarithmic scoring;
+- uniform-baseline comparisons;
+- top-one accuracy, expected calibration error and one-versus-rest discrimination;
+- outcome-class coverage and leave-one-case-out reporting;
+- machine-readable review and result schemas;
+- nineteen focused regression tests.
 
-## Calculation engine
+## Frozen outcome classes
 
-PAE now supports deterministic normalisation of human-declared priors and likelihood ranges with:
+| Outcome class | Cases |
+|---|---:|
+| Positive institutional attribution | 2 |
+| Primarily non-coercive mechanism | 2 |
+| Disputed public attribution | 2 |
+| Insufficient public information | 2 |
 
-- explicit exclusive hypothesis groups;
-- mature or resolved sufficiency gates;
-- dependency weights capped by evidence origin;
-- sensitivity bounds and leave-one-stream-out tests;
-- immutable draft hashes;
-- role-separated input approval and exact-draft review.
+`Insufficient` describes what the public record can establish under the declared question. It does not assert that hidden conduct did not occur.
 
-The engine does not generate priors, likelihoods or conclusions.
+## Acceptance logic
 
-## First historical pilot
+A result can become a `pass_candidate` only if it beats the uniform four-class baseline by the frozen Brier and logarithmic margins, reaches the top-one and calibration thresholds, records at least one correct leading classification in every outcome class and contains no major, critical or rejected external review.
 
-The Belarus–European Union 2021 pilot froze calculation evidence at 10 November 2021 and withheld later outcome records until after the draft and review were fixed.
+A pass candidate never authorises live use automatically.
 
-Result under the predeclared institutional-resolution standard:
+## Current human gate
 
-- state-facilitation point estimate: `0.866467`;
-- multiclass Brier score: `0.027109`;
-- logarithmic score: `0.143331`;
-- leading hypothesis matched the later institutional resolution;
-- the resolved hypothesis remained leading in all leave-one-stream-out tests.
+The repository can validate, blind and score the programme, but it cannot fabricate:
 
-## Validation
+- human probability assignments for the seven additional case packets;
+- two genuine independent external reviewers for every case;
+- reviewer identity, expertise, conflict declarations or signatures;
+- external review findings.
 
-The accepted PAE-08 candidate passed on Python 3.12 with:
+Independent external review must be performed by real people who did not prepare the cases or calculations and did not see the outcome labels before signing their blinded reviews.
 
-- package installation;
-- bytecode compilation;
-- 83 deterministic tests;
-- all legacy case, domain, contract and calculation commands;
-- the complete historical-pilot command and output check.
+## Safety boundary
 
-## Limits
-
-- One retrospective success does not establish calibration or general accuracy.
-- The pilot outcome is institutional attribution, not judicial proof.
-- Role-separated internal review is not independent external human validation.
-- The reported ranges depend on human-declared priors and likelihood assignments.
-
-## Current safety boundary
-
-PAE is not authorised for:
+PAE remains unauthorised for:
 
 - live unresolved cases;
 - automatic evidence collection;
@@ -73,6 +70,6 @@ PAE is not authorised for:
 - public conclusions;
 - publication, user interface or deployment.
 
-## Next authority gate
+## Current protected gate
 
-Before any live unresolved use, PAE requires a larger predeclared resolved-case calibration programme, independent external review and explicit acceptance criteria. No live-case work has begun.
+Complete Python 3.12 CI for the calibration infrastructure and frozen corpus. After merge, Issue #19 must remain open at the external-human-input gate until genuine case assignments and reviews are returned.
