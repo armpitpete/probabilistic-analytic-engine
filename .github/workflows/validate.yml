@@ -22,5 +22,7 @@ jobs:
       - run: pytest
       - run: python -m pae fixtures/ceuta-2026-method-fixture.json --output generated/ceuta-v0.1-assessment.json
       - run: python -m pae fixtures/ceuta-2026-method-fixture-v0.2.json --output generated/ceuta-v0.2-assessment.json
+      - run: python -m pae fixtures/ceuta-2026-method-fixture-v0.3.json --output generated/ceuta-v0.3-assessment.json
       - run: test -s generated/ceuta-v0.1-assessment.json
       - run: test -s generated/ceuta-v0.2-assessment.json
+      - run: test -s generated/ceuta-v0.3-assessment.json
