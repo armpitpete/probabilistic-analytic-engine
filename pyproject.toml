@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "probabilistic-analytic-engine"
-version = "0.2.0"
-description = "Auditable evidence acquisition, provenance and hypothesis analysis"
+version = "0.3.0"
+description = "Auditable evidence acquisition, provenance and research control"
 requires-python = ">=3.12"
 dependencies = []
 

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://merrinworld.uk/schemas/pae/research-protocol-v0.3.json",
+  "title": "PAE research protocol v0.3 extension",
+  "type": "object",
+  "required": ["research_protocol_version", "search_diary", "negative_evidence", "sufficiency_profile"],
+  "properties": {
+    "research_protocol_version": {"const": "0.3"},
+    "search_diary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "searched_at", "researcher", "query", "languages", "jurisdictions", "source_classes", "result_status", "notes"],
+        "properties": {
+          "result_status": {"enum": ["found", "no_result", "inaccessible"]}
+        }
+      }
+    },
+    "negative_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "requirement_id", "status", "scope", "expected_if_true", "search_ids", "notes"],
+        "properties": {
+          "status": {"enum": ["evidence_of_absence", "not_found", "not_searched", "inaccessible"]}
+        }
+      }
+    },
+    "sufficiency_profile": {
+      "type": "object",
+      "required": ["name", "minimum_independent_streams", "criticality_threshold", "require_primary_for_critical", "require_contrary_for_critical", "block_on_unsearched_critical"]
+    }
+  }
+}
