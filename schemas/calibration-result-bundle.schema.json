@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://merrinworld.uk/schemas/pae/calibration-result-bundle-v0.1.json",
+  "title": "PAE calibration result bundle v0.1",
+  "type": "object",
+  "required": ["calibration_version", "case_results", "external_reviews"],
+  "properties": {
+    "calibration_version": {"const": "0.1"},
+    "case_results": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["case_id", "resolved_outcome_class", "outcome_leakage_detected", "probabilities"],
+        "properties": {
+          "case_id": {"type": "string", "minLength": 1},
+          "resolved_outcome_class": {"enum": ["positive", "negative", "disputed", "insufficient"]},
+          "outcome_leakage_detected": {"const": false},
+          "probabilities": {
+            "type": "object",
+            "required": ["positive", "negative", "disputed", "insufficient"],
+            "properties": {
+              "positive": {"type": "number", "minimum": 0, "maximum": 1},
+              "negative": {"type": "number", "minimum": 0, "maximum": 1},
+              "disputed": {"type": "number", "minimum": 0, "maximum": 1},
+              "insufficient": {"type": "number", "minimum": 0, "maximum": 1}
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "external_reviews": {
+      "type": "array",
+      "minItems": 16,
+      "items": {"$ref": "external-review-record-v0.1.json"}
+    }
+  },
+  "additionalProperties": false
+}
