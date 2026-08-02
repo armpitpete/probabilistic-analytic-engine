@@ -1,0 +1,107 @@
+{
+  "calculation_version": "0.1",
+  "calculation_id": "controlled-calculation-method-fixture",
+  "case_snapshot_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "safety": {
+    "automatic_attribution_enabled": false,
+    "public_conclusion_authorised": false,
+    "live_unresolved_case": false,
+    "calculation_mode": "human_reviewed"
+  },
+  "sufficiency_gate": {
+    "passed": true,
+    "actual_status": "mature",
+    "reason": "Controlled fixture declares complete method coverage for arithmetic testing."
+  },
+  "analyst_authorisation": {
+    "prepared_by": "analyst-alpha",
+    "approved_for_calculation_by": "reviewer-beta",
+    "decision": "approved_for_calculation",
+    "rationale": "All assignments are artificial and suitable only for deterministic method testing.",
+    "approved_at": "2026-08-02T12:50:00+01:00"
+  },
+  "exclusive_group": {
+    "id": "primary-explanation",
+    "scope": "Artificial primary explanation set.",
+    "hypothesis_ids": ["h-organic", "h-deliberate", "h-insufficient"]
+  },
+  "nonexclusive_relationships": [],
+  "hypotheses": [
+    {
+      "id": "h-organic",
+      "label": "Predominantly organic",
+      "prior": {
+        "minimum": 0.25,
+        "base": 0.45,
+        "maximum": 0.65,
+        "provenance": ["Artificial training prior."],
+        "assumptions": ["The group is mutually exclusive for this fixture."]
+      },
+      "evidence_confidence": {
+        "level": "moderate",
+        "reason": "Artificially complete fixture.",
+        "change_conditions": ["A declared source is removed."]
+      }
+    },
+    {
+      "id": "h-deliberate",
+      "label": "Predominantly deliberate",
+      "prior": {
+        "minimum": 0.15,
+        "base": 0.35,
+        "maximum": 0.55,
+        "provenance": ["Artificial training prior."],
+        "assumptions": ["The group is mutually exclusive for this fixture."]
+      },
+      "evidence_confidence": {
+        "level": "moderate",
+        "reason": "Artificially complete fixture.",
+        "change_conditions": ["A declared source is removed."]
+      }
+    },
+    {
+      "id": "h-insufficient",
+      "label": "Insufficient information",
+      "prior": {
+        "minimum": 0.05,
+        "base": 0.2,
+        "maximum": 0.4,
+        "provenance": ["Artificial training prior."],
+        "assumptions": ["Insufficient information is an explicit outcome."]
+      },
+      "evidence_confidence": {
+        "level": "high",
+        "reason": "Coverage status is inspectable.",
+        "change_conditions": ["The sufficiency profile changes."]
+      }
+    }
+  ],
+  "evidence_updates": [
+    {
+      "id": "e-operational",
+      "independence_group": "stream-operational",
+      "weight": 1.0,
+      "assigned_by": "analyst-alpha",
+      "rationale": "Artificial operational evidence favours deliberate action.",
+      "provenance": ["Artificial fixture evidence."],
+      "multipliers": {
+        "h-organic": {"minimum": 0.35, "base": 0.55, "maximum": 0.85},
+        "h-deliberate": {"minimum": 1.8, "base": 3.0, "maximum": 5.0},
+        "h-insufficient": {"minimum": 0.6, "base": 0.8, "maximum": 1.0}
+      }
+    },
+    {
+      "id": "e-mobilisation",
+      "independence_group": "stream-participant",
+      "weight": 0.7,
+      "assigned_by": "analyst-alpha",
+      "rationale": "Artificial participant evidence modestly favours organic mobilisation.",
+      "provenance": ["Artificial fixture evidence."],
+      "multipliers": {
+        "h-organic": {"minimum": 1.2, "base": 1.7, "maximum": 2.4},
+        "h-deliberate": {"minimum": 0.75, "base": 1.0, "maximum": 1.3},
+        "h-insufficient": {"minimum": 0.8, "base": 1.0, "maximum": 1.2}
+      }
+    }
+  ]
+}

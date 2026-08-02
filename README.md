@@ -6,9 +6,9 @@ It is not a black-box truth calculator.
 
 > Collect until the important hypotheses have been fairly tested—not until the folder is large.
 
-## Foundation capabilities
+## Current capabilities
 
-PAE now provides:
+PAE provides:
 
 - evidence-requirement coverage maps;
 - explicit source independence and typed dependency relationships;
@@ -27,26 +27,25 @@ PAE now provides:
 - Value-of-Information research ranking;
 - reusable domain modules;
 - sourced historical comparison libraries;
-- a Probability Engine v0.1 contract and safety validator.
+- probability-contract validation;
+- deterministic human-reviewed probability calculation.
 
 The first specialist module covers **state migration coercion**. It contains ten evidence categories, fifteen indicators, explicit inference guards and six differently classified comparison cases, including non-coercive and organic comparators.
 
-## Probability contract
+## Human-reviewed calculation
 
-The contract validates:
+The calculation engine does not generate priors or likelihood assignments. Human analysts provide:
 
-- prior ranges, provenance and assumptions;
-- exclusive versus nested or overlapping hypotheses;
-- likelihood-strength bands;
-- correlated-evidence controls;
-- mandatory sufficiency gates;
-- evidence-confidence separation;
-- sensitivity plans;
-- immutable forecast revisions;
-- Brier, logarithmic and calibration scoring rules;
-- update triggers.
+- an explicitly exclusive hypothesis group;
+- prior ranges and provenance;
+- evidence-specific likelihood ranges;
+- source-independence groups and correlation weights;
+- evidence-confidence records;
+- a passed information-sufficiency gate.
 
-It performs no probability calculation.
+A different person must approve the inputs. The engine then produces a pending-review draft with normalised estimates, sensitivity bounds and leave-one-stream-out results. A separate reviewer must accept the exact draft hash before it can enter a controlled historical pilot.
+
+Automatic attribution, live unresolved cases and public conclusions remain disabled.
 
 ## Governing principles
 
@@ -55,9 +54,11 @@ It performs no probability calculation.
 - Source authority is claim-specific.
 - Search failure is not evidence of absence.
 - Institutional attribution is not judicial proof.
-- Historical similarity is not a probability calculation.
+- Historical similarity is not a measured base rate.
 - Nested or overlapping hypotheses are not summed as exclusive.
-- A failed sufficiency gate forbids probability updates.
+- A failed sufficiency gate forbids probability calculation.
+- Human analysts own priors and likelihood assignments.
+- Calculation drafts require independent review.
 - Motive, means and opportunity do not establish conduct, coordination or command.
 - Alternative explanations and contrary evidence must be actively sought.
 - Unknown and insufficient information are valid outcomes.
@@ -83,11 +84,16 @@ Validate a probability contract:
 python -m pae.probability_contract path/to/probability-contract.json
 ```
 
-All commands support `--output path/to/result.json`.
+Calculate and review a human-declared probability draft:
+
+```text
+python -m pae.calculation calculate plan.json --output draft.json
+python -m pae.calculation review draft.json review.json --output review-record.json
+```
 
 ## Current boundary
 
-Automatic probability updating, attribution and public conclusions remain disabled. Enabling them requires a separately authorised implementation and acceptance programme.
+The calculation engine is authorised only for controlled historical pilots. Live unresolved cases, automatic evidence collection, automatic attribution, public conclusions, publication and deployment remain prohibited.
 
 ## Donor systems
 

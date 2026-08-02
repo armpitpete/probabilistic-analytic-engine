@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://merrinworld.uk/schemas/pae/calculation-plan-v0.1.json",
+  "title": "PAE human-reviewed calculation plan v0.1",
+  "type": "object",
+  "required": [
+    "calculation_version",
+    "calculation_id",
+    "case_snapshot_sha256",
+    "safety",
+    "sufficiency_gate",
+    "analyst_authorisation",
+    "exclusive_group",
+    "hypotheses",
+    "evidence_updates"
+  ],
+  "properties": {
+    "calculation_version": {"const": "0.1"},
+    "calculation_id": {"type": "string", "minLength": 1},
+    "case_snapshot_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "safety": {
+      "type": "object",
+      "required": [
+        "automatic_attribution_enabled",
+        "public_conclusion_authorised",
+        "live_unresolved_case",
+        "calculation_mode"
+      ],
+      "properties": {
+        "automatic_attribution_enabled": {"const": false},
+        "public_conclusion_authorised": {"const": false},
+        "live_unresolved_case": {"const": false},
+        "calculation_mode": {"const": "human_reviewed"}
+      }
+    },
+    "sufficiency_gate": {
+      "type": "object",
+      "required": ["passed", "actual_status", "reason"],
+      "properties": {
+        "passed": {"const": true},
+        "actual_status": {"enum": ["mature", "resolved"]},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "hypotheses": {"type": "array", "minItems": 2},
+    "evidence_updates": {"type": "array", "minItems": 1}
+  }
+}
