@@ -1,6 +1,6 @@
 ---
 completion_authority: true
-status: PAE_11_PACKET_MOBILISATION_IN_PROGRESS
+status: EXTERNAL_HUMAN_INPUT_REQUIRED
 ---
 
 # Probabilistic Analytic Engine — Current Status
@@ -8,47 +8,56 @@ status: PAE_11_PACKET_MOBILISATION_IN_PROGRESS
 ## Authority
 
 - Repository: `armpitpete/probabilistic-analytic-engine`
-- Accepted PAE-10 infrastructure: `4030ef0b70747a4684be6708da0c10dbfaf81d9e`
-- Parent calibration programme: Issue #19
-- Active bounded unit: Issue #21 — PAE-11
-- Active branch: `workflow/pae-11-human-packets`
-- Candidate package version: `0.9.0`
+- Accepted calibration infrastructure: `4030ef0b70747a4684be6708da0c10dbfaf81d9e`
+- Accepted analyst and external-review workflow: `b7077ea6c5d750899df62ed689e98ced4fb31103`
+- Parent calibration programme: Issue #19 — open
+- Package version: `0.9.0`
 
-## Accepted calibration infrastructure
+## Repository work complete
 
-PAE contains a frozen eight-case corpus with exactly two positive, two negative, two disputed and two insufficient-public-information outcomes, plus fixed pass, correction and stop criteria, leakage controls, aggregate scoring and external-review schemas.
+PAE now contains:
 
-## Current bounded unit
-
-PAE-11 turns that infrastructure into a usable human workflow by providing:
-
-- one outcome-blinded analyst packet per frozen case;
-- one outcome-blinded external-review packet per frozen case;
-- blank probability forms with no suggested values;
-- source-authority and dependency worksheets;
-- contrary-evidence and negative-search records;
+- a frozen balanced eight-case calibration corpus;
+- exactly two positive, two negative, two disputed and two insufficient-public-information outcomes;
+- predeclared cutoffs, resolution standards and withheld outcome sources;
+- fixed pass, correction and stop criteria;
+- outcome-leakage and corpus-balance controls;
+- aggregate Brier, logarithmic, calibration and discrimination scoring;
+- one outcome-blinded analyst packet per case;
+- one outcome-blinded external-review packet per case;
+- blank probability forms without suggested values;
+- source-authority, dependency, contrary-evidence and negative-search worksheets;
 - analyst preparation and approval roles;
-- a blank assignment register covering all eight cases;
-- reviewer independence, conflict and outcome-blinding declarations;
-- an external-review invitation template;
-- assignment-register validation;
-- role-overlap and duplicate-reviewer rejection;
-- a complete-workflow gate requiring two reviewers per case;
-- deterministic tests and command-line validation.
+- a blank eight-case assignment register;
+- reviewer invitation and declaration materials;
+- assignment-register validation and role-overlap safeguards;
+- schemas and command-line tools for returned human records.
 
-## Human gate preserved
+## Validation
 
-The workflow intentionally contains no invented:
+The accepted PAE-11 candidate passed on Python 3.12 with:
 
-- analysts;
-- probability assignments;
-- approvers;
-- external reviewers;
-- affiliations or expertise;
-- signatures;
-- findings.
+- package installation;
+- bytecode compilation;
+- 118 deterministic tests;
+- all legacy assessment, domain, probability-contract, calculation, pilot and calibration commands;
+- calibration-manifest and blinded-review generation;
+- human-workflow bundle generation;
+- blank assignment-register validation as valid but incomplete.
 
-A blank register is valid but incomplete. A completed register still does not authorise live use.
+## Genuine human evidence still required
+
+Issue #19 cannot be completed until real people provide:
+
+1. human probability assignments and approval for the seven additional case packets;
+2. at least two genuine external reviewers for every case;
+3. verified reviewer identity, affiliation, expertise and conflict declarations;
+4. signed outcome-blinded review records;
+5. external findings and any required corrections;
+6. a completed result bundle for aggregate scoring;
+7. an explicit human accept, correct or stop decision.
+
+The repository must not substitute synthetic identities, AI-generated signatures or internal role labels for independent external review.
 
 ## Safety boundary
 
@@ -61,15 +70,8 @@ PAE remains unauthorised for:
 - public conclusions;
 - publication, user interface or deployment.
 
-## Acceptance gate
+A complete human assignment register or a calibration `pass_candidate` does not automatically authorise live use.
 
-Require:
+## Current gate
 
-- all 102 accepted tests remain green;
-- all new human-workflow tests pass;
-- outcome fields remain absent from generated packets;
-- no probability suggestions appear;
-- blank assignment-register validation succeeds as incomplete;
-- invalid role overlap, conflicts and inadequate reviewer counts fail visibly;
-- Python 3.12 produces the workflow bundle and register-status outputs;
-- one exact pull-request head is returned for protected review.
+The next action requires owner-supported recruitment or nomination of genuine analysts, approvers and external reviewers. No live-case work has begun.
