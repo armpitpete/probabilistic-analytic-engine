@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://merrinworld.uk/schemas/pae/external-review-record-v0.1.json",
+  "title": "PAE external review record v0.1",
+  "type": "object",
+  "required": [
+    "case_id",
+    "reviewer_id",
+    "affiliation",
+    "expertise",
+    "independent",
+    "conflict_of_interest",
+    "outcome_blinded_during_review",
+    "not_involved_in_case_preparation",
+    "reviewer_signature",
+    "decision",
+    "findings",
+    "reviewed_at"
+  ],
+  "properties": {
+    "case_id": {"type": "string", "minLength": 1},
+    "reviewer_id": {"type": "string", "minLength": 1},
+    "affiliation": {"type": "string", "minLength": 1},
+    "expertise": {"type": "string", "minLength": 1},
+    "independent": {"const": true},
+    "conflict_of_interest": {"const": false},
+    "outcome_blinded_during_review": {"const": true},
+    "not_involved_in_case_preparation": {"const": true},
+    "reviewer_signature": {"type": "string", "minLength": 1},
+    "decision": {"enum": ["accept", "accept_with_minor_comments", "reject"]},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity", "finding"],
+        "properties": {
+          "severity": {"enum": ["minor", "major", "critical"]},
+          "finding": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "reviewed_at": {"type": "string", "format": "date-time"}
+  },
+  "additionalProperties": false
+}
