@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://merrinworld.uk/schemas/pae/case-v0.2.json",
+  "title": "PAE case v0.2",
+  "type": "object",
+  "required": ["schema_version", "case_version", "case_id", "title", "status", "domain_id", "causal_profile", "hypotheses", "relationships", "requirements", "sources", "evidence_items", "research_options"],
+  "properties": {
+    "schema_version": {"const": "0.2"},
+    "case_version": {"type": "string", "minLength": 1},
+    "case_id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "status": {"enum": ["method_fixture", "research", "paused", "closed"]},
+    "domain_id": {"type": "string", "minLength": 1},
+    "causal_profile": {"type": "object"},
+    "hypotheses": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/hypothesis"}},
+    "relationships": {"type": "array", "items": {"$ref": "#/$defs/relationship"}},
+    "requirements": {"type": "array"},
+    "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}},
+    "evidence_items": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
+    "research_options": {"type": "array"}
+  },
+  "$defs": {
+    "hypothesis": {
+      "type": "object",
+      "required": ["id", "label", "description", "class", "actors", "mechanism", "timeframe", "outcome", "predictions", "disconfirmers"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "label": {"type": "string", "minLength": 1},
+        "description": {"type": "string", "minLength": 1},
+        "class": {"enum": ["organic", "ordinary_failure", "incompetence", "coincidence", "domestic_deliberate", "foreign_indirect", "foreign_direct", "mixed", "insufficient_information"]},
+        "actors": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "mechanism": {"type": "string", "minLength": 1},
+        "timeframe": {"type": "string", "minLength": 1},
+        "outcome": {"type": "string", "minLength": 1},
+        "predictions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "disconfirmers": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "required": ["from", "to", "type"],
+      "properties": {
+        "from": {"type": "string", "minLength": 1},
+        "to": {"type": "string", "minLength": 1},
+        "type": {"enum": ["mutually_exclusive", "overlaps", "nested_under", "sequential", "compatible"]}
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": ["claim_type", "scope", "basis", "limitations"],
+      "properties": {
+        "claim_type": {"type": "string", "minLength": 1},
+        "scope": {"type": "string", "minLength": 1},
+        "basis": {"type": "string", "minLength": 1},
+        "limitations": {"type": "string", "minLength": 1}
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["id", "title", "source_class", "independence_group", "derived_from", "url", "publisher", "author", "published_at", "collected_at", "archive_url", "content_sha256", "language", "jurisdiction", "capture_limitations", "authority"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "title": {"type": "string", "minLength": 1},
+        "url": {"type": "string", "minLength": 1},
+        "publisher": {"type": "string", "minLength": 1},
+        "author": {"type": "string", "minLength": 1},
+        "published_at": {"type": "string", "format": "date-time"},
+        "collected_at": {"type": "string", "format": "date-time"},
+        "archive_url": {"type": "string", "minLength": 1},
+        "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "language": {"type": "string", "minLength": 1},
+        "jurisdiction": {"type": "string", "minLength": 1},
+        "capture_limitations": {"type": "string", "minLength": 1},
+        "authority": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/authority"}}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["id", "requirement_id", "source_ids", "direction", "verification", "proposition", "source_locator", "inspectable_material", "authentication_status", "relevance", "limitations", "reviewer_notes"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "proposition": {"type": "string", "minLength": 1},
+        "source_locator": {"type": "string", "minLength": 1},
+        "inspectable_material": {"type": "string", "minLength": 1},
+        "authentication_status": {"enum": ["unassessed", "failed", "partial", "authenticated", "disputed"]},
+        "relevance": {"type": "string", "minLength": 1},
+        "limitations": {"type": "string", "minLength": 1},
+        "reviewer_notes": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

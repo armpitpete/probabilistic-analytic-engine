@@ -1,52 +1,63 @@
 # Probabilistic Analytic Engine
 
-The Probabilistic Analytic Engine (PAE) is an auditable system for comparing competing explanations, organising evidence, identifying information gaps and updating provisional judgements under uncertainty.
+The Probabilistic Analytic Engine (PAE) is an auditable system for comparing competing explanations, organising evidence, identifying information gaps and supporting provisional judgement under uncertainty.
 
-Its purpose is not to manufacture certainty or to act as a black-box truth calculator.
+It is not a black-box truth calculator.
 
 > Collect until the important hypotheses have been fairly tested—not until the folder is large.
 
+## Accepted capabilities
+
+PAE v0.1 provides:
+
+- coverage mapping;
+- explicit source-dependency handling;
+- critical information-gap reporting;
+- ranked next-search queues;
+- information-sufficiency states.
+
+PAE v0.2 adds a strict case format with:
+
+- full source provenance and content checksums;
+- claim-specific source authority;
+- proposition-level evidence records;
+- immutable case snapshots;
+- hypothesis classes, actors, mechanisms and outcomes;
+- explicit hypothesis relationships;
+- required predictions and disconfirmers;
+- mixed-cause, ordinary-explanation and insufficient-information checks.
+
+Legacy v0.1 cases remain supported and are labelled as legacy rather than falsely presented as v0.2-complete.
+
 ## Governing principles
 
-- Evidence and probability are separate: a leading hypothesis may still have weak evidence confidence.
-- Claims, testimony, inspectable material, authentication, corroboration, contradiction and conclusions remain distinct.
+- Evidence and probability remain separate.
 - Repeated reporting from one underlying source counts as one evidence stream.
+- Source authority is claim-specific.
 - Motive, means and opportunity do not establish conduct, coordination or command.
 - Alternative explanations and contrary evidence must be actively sought.
-- Probability ranges must expose their assumptions and must change when the evidence changes.
+- Overlapping and mixed causes must be represented where appropriate.
 - Unknown and insufficient information are valid outcomes.
 - Collection, analysis, public wording and publication authority remain separate.
 
-## Initial bounded unit
+## Command line
 
-PAE v0.1 will define and validate the Evidence Acquisition Manager, producing:
+```text
+python -m pae path/to/case.json
+```
 
-1. a coverage map;
-2. a source-dependency graph;
-3. critical information gaps;
-4. a ranked next-search queue;
-5. an information-sufficiency status.
+Use `--output path/to/result.json` for a deterministic JSON assessment file.
 
-The first unit includes:
+## Current boundary
 
-- an Evidence Requirements Matrix;
-- structured source and evidence schemas;
-- information-sufficiency gates;
-- a transparent Value-of-Information ranking method;
-- one controlled Ceuta 2026 fixture.
-
-It does not yet include automated probability calculations, geopolitical attribution findings, publication or deployment.
+PAE does not yet calculate attribution probabilities. Probability work remains blocked until evidence structure, domain comparison and calibration contracts are complete.
 
 ## Donor systems
 
-PAE will adapt proven patterns from:
+PAE adapts general patterns from:
 
-- `armpitpete/story-evidence-collector` for bounded collection, provenance, evidence packs, search diaries, negative-evidence records and deterministic validation;
-- `armpitpete/thisweekinsmoke` for evidence confidence, contradiction testing and public wording discipline;
+- `armpitpete/story-evidence-collector` for bounded collection, provenance and deterministic validation;
+- `armpitpete/thisweekinsmoke` for evidence confidence and contradiction discipline;
 - `armpitpete/project-reader` for evidence-backed explanation and explicit unknown states.
 
-Donor code and schemas must be copied selectively with provenance recorded. Existing project purposes and protected implementation lanes must not be altered.
-
-## Status
-
-Repository foundation established. No analytical conclusion or public output is authorised.
+Donor repositories are not modified by PAE work.
