@@ -75,7 +75,7 @@ def _handoff() -> dict:
                         "source_location": "Collector source record 1.",
                         "local_copy_path": None,
                         "visible_excerpt": "fixture excerpt",
-                        "visible_excerpt_sha256": "c" * 64,
+                        "visible_excerpt_sha256": sha256(b"fixture excerpt").hexdigest(),
                         "discovered_links": [],
                         "preservation_status": "excerpt_only",
                     },
@@ -149,6 +149,18 @@ def test_valid_handoff_is_acquisition_input_only() -> None:
         (lambda x: x["producer"].update(authority_effect="analysis"), "may not grant"),
         (lambda x: x["sources"][0].pop("provenance"), "provenance"),
         (lambda x: x.pop("uncertainty"), "uncertainty"),
+        (
+            lambda x: x["sources"][0]["preserved_source"].update(
+                visible_excerpt="tampered"
+            ),
+            "excerpt digest",
+        ),
+        (
+            lambda x: x.__setitem__(
+                "handoff_id", "sec-evidence-intake:wrong:0000000000000000"
+            ),
+            "bind",
+        ),
         (lambda x: x.pop("human_review"), "human_review"),
         (lambda x: x.__setitem__("non_authorities", NON_AUTHORITIES[:-1]), "non-authorities"),
         (lambda x: x["evidence_pack"]["validation"].update(status="invalid"), "validated"),
