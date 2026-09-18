@@ -28,7 +28,7 @@ def _handoff() -> dict:
     return _seal(
         {
             "schema_version": "1",
-            "handoff_id": "sec-evidence-intake:fixture:0123456789abcdef",
+            "handoff_id": "sec-evidence-intake:2026-09-16-sec-evidence-intake-handoff:aaaaaaaaaaaaaaaa",
             "created_at": "2026-09-16T18:10:00Z",
             "producer": {
                 "system": "story-evidence-collector",
