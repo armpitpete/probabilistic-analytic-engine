@@ -77,13 +77,22 @@ def validate_sec_evidence_intake(value: Any) -> list[str]:
         }:
             errors.append("PAE requires a validated SEC Evidence Pack")
         pack_digest = pack.get("integrity_sha256")
-        if not isinstance(pack_digest, str) or len(pack_digest) != 64:
+        if (
+            not isinstance(pack_digest, str)
+            or len(pack_digest) != 64
+            or any(ch not in "0123456789abcdef" for ch in pack_digest)
+        ):
             errors.append("evidence_pack.integrity_sha256 is required")
+        elif value.get("handoff_id") != (
+            f"sec-evidence-intake:{pack_id}:{pack_digest[:16]}"
+        ):
+            errors.append("handoff_id must bind the SEC Evidence Pack identity and digest")
 
     sources = value.get("sources")
     if not isinstance(sources, list) or not sources:
         errors.append("PAE acquisition input requires at least one source")
         sources = []
+    expected_failures: list[dict[str, Any]] = []
     for index, source in enumerate(sources, 1):
         if not isinstance(source, Mapping):
             errors.append(f"source {index} must be an object")
@@ -108,6 +117,28 @@ def validate_sec_evidence_intake(value: Any) -> list[str]:
         for field in ("collection", "preserved_source"):
             if not isinstance(source.get(field), Mapping):
                 errors.append(f"source {index} missing {field}")
+        collection = source.get("collection")
+        if isinstance(collection, Mapping):
+            status = collection.get("scrape_status")
+            if status and status not in {"ok", "captured", "fixture_from_reviewed_pack"}:
+                expected_failures.append(
+                    {
+                        "source_id": source.get("source_id"),
+                        "scrape_status": status,
+                        "robots_allowed": collection.get("robots_allowed"),
+                        "error": collection.get("error"),
+                    }
+                )
+        preserved = source.get("preserved_source")
+        if isinstance(preserved, Mapping):
+            excerpt = preserved.get("visible_excerpt")
+            digest = preserved.get("visible_excerpt_sha256")
+            if not isinstance(excerpt, str):
+                errors.append(f"source {index} visible_excerpt must be a string")
+            else:
+                expected_digest = sha256(excerpt.encode("utf-8")).hexdigest() if excerpt else None
+                if digest != expected_digest:
+                    errors.append(f"source {index} visible excerpt digest mismatch")
 
     uncertainty = value.get("uncertainty")
     if not isinstance(uncertainty, Mapping):
@@ -116,6 +147,8 @@ def validate_sec_evidence_intake(value: Any) -> list[str]:
         for field in ("collection_failures", "negative_evidence", "search_dead_ends"):
             if not isinstance(uncertainty.get(field), list):
                 errors.append(f"uncertainty.{field} must be preserved")
+        if uncertainty.get("collection_failures") != expected_failures:
+            errors.append("uncertainty.collection_failures must preserve failed collection state")
 
     review = value.get("human_review")
     if not isinstance(review, Mapping):
